@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "7GF0wLRwaUp6SGFjUJB5FwHXXelsjARuNrtXqwbqOwMEbNtNTqo/H+ZXUPXRXD5uJzCC0UIBQ5iU0MnfZTLfCw==",
+  "dgSpecHash": "OfMhedVP85pX5f+/JjX2eJLjjCj7FI/je1OAWcZvd7d52dLnqmWbMen+u30Fm0143de8cWdfbkvhgMXk1KwZmA==",
   "success": true,
   "projectFilePath": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Core\\ToBuyAPI.Application\\ToBuyAPI.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\erdin\\.nuget\\packages\\fluentvalidation\\11.5.0\\fluentvalidation.11.5.0.nupkg.sha512",
+    "C:\\Users\\erdin\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\erdin\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.0\\fluentvalidation.dependencyinjectionextensions.11.5.0.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.13\\microsoft.entityframeworkcore.6.0.13.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.13\\microsoft.entityframeworkcore.abstractions.6.0.13.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.13\\microsoft.entityframeworkcore.analyzers.6.0.13.nupkg.sha512",

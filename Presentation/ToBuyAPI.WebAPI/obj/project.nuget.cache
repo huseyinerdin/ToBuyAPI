@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "SKSVJ+4boM6DpHYdt27XF9MSfKiO3xWUeSIs6VgafRwZVrbF6No7NBziOHTWVygqqogoEW3/r1ntopJBfgRR8w==",
+  "dgSpecHash": "jGy7ROkurPGq5FovWPthuRBAHmeIwb33dg766RMf4lDLX8gZnlZwh55EWp9KjKH1QFSVsG0awMLAPG9nkNBWYg==",
   "success": true,
   "projectFilePath": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\ToBuyAPI.WebAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\erdin\\.nuget\\packages\\fluentvalidation\\11.5.0\\fluentvalidation.11.5.0.nupkg.sha512",
+    "C:\\Users\\erdin\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\erdin\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.0\\fluentvalidation.dependencyinjectionextensions.11.5.0.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

@@ -2,6 +2,56 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "FluentValidation/11.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "FluentValidation.AspNetCore/11.2.2": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "11.2.1",
+          "FluentValidation.DependencyInjectionExtensions": "11.2.1"
+        },
+        "compile": {
+          "lib/net6.0/FluentValidation.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/FluentValidation.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "FluentValidation.DependencyInjectionExtensions/11.5.0": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "11.5.0",
+          "Microsoft.Extensions.Dependencyinjection.Abstractions": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -1032,6 +1082,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "FluentValidation": "11.5.0",
+          "FluentValidation.AspNetCore": "11.2.2",
+          "FluentValidation.DependencyInjectionExtensions": "11.5.0",
           "Microsoft.EntityFrameworkCore": "6.0.13",
           "ToBuyApı.Domain": "1.0.0"
         },
@@ -1040,6 +1093,19 @@
         },
         "runtime": {
           "bin/placeholder/ToBuyAPI.Application.dll": {}
+        }
+      },
+      "ToBuyAPI.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ToBuyAPI.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ToBuyAPI.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ToBuyAPI.Infrastructure.dll": {}
         }
       },
       "ToBuyAPI.Persistence/1.0.0": {
@@ -1072,6 +1138,65 @@
     }
   },
   "libraries": {
+    "FluentValidation/11.5.0": {
+      "sha512": "DExajJh+cguLk1XodH+LVVFuSsCqoEmXOQsxqP5rvVeUD1hIda59cyuL73LHJAYIrFatR8ZZ1H7kfejHN9XFWw==",
+      "type": "package",
+      "path": "fluentvalidation/11.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.11.5.0.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net5.0/FluentValidation.dll",
+        "lib/net5.0/FluentValidation.xml",
+        "lib/net6.0/FluentValidation.dll",
+        "lib/net6.0/FluentValidation.xml",
+        "lib/net7.0/FluentValidation.dll",
+        "lib/net7.0/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml",
+        "lib/netstandard2.1/FluentValidation.dll",
+        "lib/netstandard2.1/FluentValidation.xml"
+      ]
+    },
+    "FluentValidation.AspNetCore/11.2.2": {
+      "sha512": "jU/MHXqg9cnOU18dY75vorP2c2WDKMan4zegOPsoc34xZVjzTEtXP0fKvkDEdeaChUVooNWuRr27u9w3sYbEFA==",
+      "type": "package",
+      "path": "fluentvalidation.aspnetcore/11.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+        "fluentvalidation.aspnetcore.nuspec",
+        "lib/net5.0/FluentValidation.AspNetCore.dll",
+        "lib/net5.0/FluentValidation.AspNetCore.xml",
+        "lib/net6.0/FluentValidation.AspNetCore.dll",
+        "lib/net6.0/FluentValidation.AspNetCore.xml",
+        "lib/netcoreapp3.1/FluentValidation.AspNetCore.dll",
+        "lib/netcoreapp3.1/FluentValidation.AspNetCore.xml"
+      ]
+    },
+    "FluentValidation.DependencyInjectionExtensions/11.5.0": {
+      "sha512": "GrOU4S2SKiDtI9B9Ol3/CE6gkG9wopxxhOfQJIsoymmQ0uCspPl8mfQXpEVCC72/Nv6qg1gp82ylo5b5d3GzRQ==",
+      "type": "package",
+      "path": "fluentvalidation.dependencyinjectionextensions/11.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.dependencyinjectionextensions.11.5.0.nupkg.sha512",
+        "fluentvalidation.dependencyinjectionextensions.nuspec",
+        "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll",
+        "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.xml",
+        "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll",
+        "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.xml"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -2671,6 +2796,11 @@
       "path": "../../Core/ToBuyAPI.Application/ToBuyAPI.Application.csproj",
       "msbuildProject": "../../Core/ToBuyAPI.Application/ToBuyAPI.Application.csproj"
     },
+    "ToBuyAPI.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../../Infrastructure/ToBuyAPI.Infrastructure/ToBuyAPI.Infrastructure.csproj",
+      "msbuildProject": "../../Infrastructure/ToBuyAPI.Infrastructure/ToBuyAPI.Infrastructure.csproj"
+    },
     "ToBuyAPI.Persistence/1.0.0": {
       "type": "project",
       "path": "../../Infrastructure/ToBuyAPI.Persistence/ToBuyAPI.Persistence.csproj",
@@ -2687,6 +2817,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 6.0.13",
       "Swashbuckle.AspNetCore >= 6.2.3",
       "ToBuyAPI.Application >= 1.0.0",
+      "ToBuyAPI.Infrastructure >= 1.0.0",
       "ToBuyAPI.Persistence >= 1.0.0"
     ]
   },
@@ -2724,6 +2855,9 @@
           "projectReferences": {
             "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Core\\ToBuyAPI.Application\\ToBuyAPI.Application.csproj": {
               "projectPath": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Core\\ToBuyAPI.Application\\ToBuyAPI.Application.csproj"
+            },
+            "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Infrastructure\\ToBuyAPI.Infrastructure\\ToBuyAPI.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Infrastructure\\ToBuyAPI.Infrastructure\\ToBuyAPI.Infrastructure.csproj"
             },
             "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Infrastructure\\ToBuyAPI.Persistence\\ToBuyAPI.Persistence.csproj": {
               "projectPath": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Infrastructure\\ToBuyAPI.Persistence\\ToBuyAPI.Persistence.csproj"

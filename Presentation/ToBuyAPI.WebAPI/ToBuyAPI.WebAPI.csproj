@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\ToBuyAPI.Application\ToBuyAPI.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\ToBuyAPI.Infrastructure\ToBuyAPI.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\ToBuyAPI.Persistence\ToBuyAPI.Persistence.csproj" />
   </ItemGroup>
 

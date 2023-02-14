@@ -1,14 +1,24 @@
+using FluentValidation.AspNetCore;
+using ToBuyAPI.Infrastructure.Filters;
 using ToBuyAPI.Persistence;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddPersistenceServices();
-//CORS policy added.
+
+// CORS policy created.
 builder.Services.AddCors(
     options => options.AddDefaultPolicy(
         policy => policy.WithOrigins("https://localhost:7156/", "http://localhost:7156/").AllowAnyHeader().AllowAnyMethod()));
-builder.Services.AddControllers();
+
+// Validation filter added for validation checks on the backend.
+builder.Services.AddControllers(options => options.Filters.Add<ValidationFilter>());
+// TODO=>.AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<Buraya valýdatorlardan býrýnýn adý gelmesý yeter>()).;
+
+// Default validation check disabled
+// TODO=>.ConfigureApiBehaviorOptions(options => options.SuppressModelStateInvalidFilter = true);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -23,6 +33,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Created CORS policy was used.
 app.UseCors();
 
 app.UseHttpsRedirection();
