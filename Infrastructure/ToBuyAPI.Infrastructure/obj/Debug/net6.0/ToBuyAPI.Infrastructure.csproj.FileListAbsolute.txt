@@ -1,0 +1,17 @@
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Infrastructure\ToBuyAPI.Infrastructure\bin\Debug\net6.0\ToBuyAPI.Infrastructure.deps.json
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Infrastructure\ToBuyAPI.Infrastructure\bin\Debug\net6.0\ToBuyAPI.Infrastructure.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Infrastructure\ToBuyAPI.Infrastructure\bin\Debug\net6.0\ToBuyAPI.Infrastructure.pdb
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Infrastructure\ToBuyAPI.Infrastructure\bin\Debug\net6.0\ToBuyAPI.Application.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Infrastructure\ToBuyAPI.Infrastructure\bin\Debug\net6.0\ToBuyApı.Domain.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Infrastructure\ToBuyAPI.Infrastructure\bin\Debug\net6.0\ToBuyAPI.Application.pdb
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Infrastructure\ToBuyAPI.Infrastructure\bin\Debug\net6.0\ToBuyApı.Domain.pdb
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Infrastructure\ToBuyAPI.Infrastructure\obj\Debug\net6.0\ToBuyAPI.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Infrastructure\ToBuyAPI.Infrastructure\obj\Debug\net6.0\ToBuyAPI.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Infrastructure\ToBuyAPI.Infrastructure\obj\Debug\net6.0\ToBuyAPI.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Infrastructure\ToBuyAPI.Infrastructure\obj\Debug\net6.0\ToBuyAPI.Infrastructure.AssemblyInfo.cs
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Infrastructure\ToBuyAPI.Infrastructure\obj\Debug\net6.0\ToBuyAPI.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Infrastructure\ToBuyAPI.Infrastructure\obj\Debug\net6.0\ToBuyAPI.Infrastructure.csproj.CopyComplete
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Infrastructure\ToBuyAPI.Infrastructure\obj\Debug\net6.0\ToBuyAPI.Infrastructure.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Infrastructure\ToBuyAPI.Infrastructure\obj\Debug\net6.0\refint\ToBuyAPI.Infrastructure.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Infrastructure\ToBuyAPI.Infrastructure\obj\Debug\net6.0\ToBuyAPI.Infrastructure.pdb
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Infrastructure\ToBuyAPI.Infrastructure\obj\Debug\net6.0\ref\ToBuyAPI.Infrastructure.dll

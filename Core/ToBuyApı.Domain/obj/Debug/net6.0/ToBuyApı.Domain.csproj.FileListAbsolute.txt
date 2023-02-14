@@ -1,0 +1,12 @@
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyApı.Domain\bin\Debug\net6.0\ToBuyApı.Domain.deps.json
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyApı.Domain\bin\Debug\net6.0\ToBuyApı.Domain.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyApı.Domain\bin\Debug\net6.0\ToBuyApı.Domain.pdb
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyApı.Domain\obj\Debug\net6.0\ToBuyApı.Domain.csproj.AssemblyReference.cache
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyApı.Domain\obj\Debug\net6.0\ToBuyApı.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyApı.Domain\obj\Debug\net6.0\ToBuyApı.Domain.AssemblyInfoInputs.cache
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyApı.Domain\obj\Debug\net6.0\ToBuyApı.Domain.AssemblyInfo.cs
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyApı.Domain\obj\Debug\net6.0\ToBuyApı.Domain.csproj.CoreCompileInputs.cache
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyApı.Domain\obj\Debug\net6.0\ToBuyApı.Domain.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyApı.Domain\obj\Debug\net6.0\refint\ToBuyApı.Domain.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyApı.Domain\obj\Debug\net6.0\ToBuyApı.Domain.pdb
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyApı.Domain\obj\Debug\net6.0\ref\ToBuyApı.Domain.dll

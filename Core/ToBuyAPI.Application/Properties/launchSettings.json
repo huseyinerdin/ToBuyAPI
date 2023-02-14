@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ToBuyAPI.Application": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:62906;http://localhost:62912"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyAPI.Application\bin\Debug\net6.0\ToBuyAPI.Application.deps.json
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyAPI.Application\bin\Debug\net6.0\ToBuyAPI.Application.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyAPI.Application\bin\Debug\net6.0\ToBuyAPI.Application.pdb
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyAPI.Application\bin\Debug\net6.0\ToBuyApı.Domain.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyAPI.Application\bin\Debug\net6.0\ToBuyApı.Domain.pdb
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyAPI.Application\obj\Debug\net6.0\ToBuyAPI.Application.csproj.AssemblyReference.cache
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyAPI.Application\obj\Debug\net6.0\ToBuyAPI.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyAPI.Application\obj\Debug\net6.0\ToBuyAPI.Application.AssemblyInfoInputs.cache
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyAPI.Application\obj\Debug\net6.0\ToBuyAPI.Application.AssemblyInfo.cs
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyAPI.Application\obj\Debug\net6.0\ToBuyAPI.Application.csproj.CoreCompileInputs.cache
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyAPI.Application\obj\Debug\net6.0\ToBuyAPI.Application.csproj.CopyComplete
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyAPI.Application\obj\Debug\net6.0\ToBuyAPI.Application.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyAPI.Application\obj\Debug\net6.0\refint\ToBuyAPI.Application.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyAPI.Application\obj\Debug\net6.0\ToBuyAPI.Application.pdb
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Core\ToBuyAPI.Application\obj\Debug\net6.0\ref\ToBuyAPI.Application.dll
