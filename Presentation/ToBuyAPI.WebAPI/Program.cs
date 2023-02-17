@@ -1,4 +1,5 @@
 using FluentValidation.AspNetCore;
+using ToBuyAPI.Infrastructure;
 using ToBuyAPI.Infrastructure.Filters;
 using ToBuyAPI.Persistence;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddPersistenceServices();
+builder.Services.AddInfrastructureServices();
 
 // CORS policy created.
 builder.Services.AddCors(
