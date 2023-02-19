@@ -30,7 +30,11 @@ namespace ToBuyAPI.Persistence.Repositories
 
         public async Task<bool> AddRangeAsync(List<T> models)
         {
-            await Table.AddRangeAsync(models);
+            foreach (T model in models)
+            {
+                bool result = await AddAsync(model);
+                if(!result) return false;
+            }
             return true;
         }
 
@@ -49,6 +53,11 @@ namespace ToBuyAPI.Persistence.Repositories
         public bool Remove(List<T> models)
         {
             Table.RemoveRange(models);
+            foreach (T model in models)
+            {
+                bool result = Remove(model);
+                if(!result) return false;
+            }
             return true;
         }
 

@@ -1,14 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "BYl05VKVbjUk2RW5x2Ih4AqXXSkPg+FeJt/hhO0/Kze33XdfywknZSWozk+iqQHRSAUbzP4cvlGAGpSCdbQ7lw==",
+  "dgSpecHash": "KrxD9QA//Dv/E82p+64K1jrLlE5keFhK+zzLrSqTJQduoh06fUeb7j+8tbdKtehf9vAOyqQ/vXiKL0hhy8Px/Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Infrastructure\\ToBuyAPI.Persistence\\ToBuyAPI.Persistence.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\erdin\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\erdin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\fluentvalidation\\11.5.0\\fluentvalidation.11.5.0.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.0\\fluentvalidation.dependencyinjectionextensions.11.5.0.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\erdin\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\erdin\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.13\\microsoft.entityframeworkcore.6.0.13.nupkg.sha512",

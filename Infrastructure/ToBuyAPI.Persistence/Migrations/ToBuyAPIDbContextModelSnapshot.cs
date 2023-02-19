@@ -79,34 +79,6 @@ namespace ToBuyAPI.Persistence.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("ToBuyApı.Domain.Entities.File", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FileName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Path")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Files");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("File");
-                });
-
             modelBuilder.Entity("ToBuyApı.Domain.Entities.Product", b =>
                 {
                     b.Property<Guid>("Id")
@@ -135,6 +107,37 @@ namespace ToBuyAPI.Persistence.Migrations
                     b.HasIndex("ToBuyListId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("ToBuyApı.Domain.Entities.ProductImageFile", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Storage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductImages");
                 });
 
             modelBuilder.Entity("ToBuyApı.Domain.Entities.ToBuyList", b =>
@@ -169,13 +172,6 @@ namespace ToBuyAPI.Persistence.Migrations
                     b.ToTable("ToBuyLists");
                 });
 
-            modelBuilder.Entity("ToBuyApı.Domain.Entities.ProductImageFile", b =>
-                {
-                    b.HasBaseType("ToBuyApı.Domain.Entities.File");
-
-                    b.HasDiscriminator().HasValue("ProductImageFile");
-                });
-
             modelBuilder.Entity("CategoryProduct", b =>
                 {
                     b.HasOne("ToBuyApı.Domain.Entities.Category", null)
@@ -198,6 +194,17 @@ namespace ToBuyAPI.Persistence.Migrations
                         .HasForeignKey("ToBuyListId");
                 });
 
+            modelBuilder.Entity("ToBuyApı.Domain.Entities.ProductImageFile", b =>
+                {
+                    b.HasOne("ToBuyApı.Domain.Entities.Product", "Product")
+                        .WithMany("ProductImageFiles")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("ToBuyApı.Domain.Entities.ToBuyList", b =>
                 {
                     b.HasOne("ToBuyApı.Domain.Entities.Customer", "Customer")
@@ -212,6 +219,11 @@ namespace ToBuyAPI.Persistence.Migrations
             modelBuilder.Entity("ToBuyApı.Domain.Entities.Customer", b =>
                 {
                     b.Navigation("ToBuyLists");
+                });
+
+            modelBuilder.Entity("ToBuyApı.Domain.Entities.Product", b =>
+                {
+                    b.Navigation("ProductImageFiles");
                 });
 
             modelBuilder.Entity("ToBuyApı.Domain.Entities.ToBuyList", b =>

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToBuyAPI.Application.Repositories
+namespace ToBuyAPI.Application.DTOs.Category
 {
-    public interface IFileReadRepository : IReadRepository<ToBuyApı.Domain.Entities.File>
+    public class CreateCategory
     {
+        public string Name { get; set; }
     }
 }
