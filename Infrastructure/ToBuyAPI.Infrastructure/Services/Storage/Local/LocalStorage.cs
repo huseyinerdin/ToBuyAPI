@@ -3,43 +3,49 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
+using ToBuyAPI.Application.Abstractions.Storage.Local;
 using ToBuyAPI.Infrastructure.Operations;
 
-namespace ToBuyAPI.Infrastructure.Services
+namespace ToBuyAPI.Infrastructure.Services.Storage.Local
 {
-    public class FileService 
+    public class LocalStorage : ILocalStorage
     {
         readonly IWebHostEnvironment _webHostEnvironment;
 
-        public FileService(IWebHostEnvironment webHostEnvironment)
+        public LocalStorage(IWebHostEnvironment webHostEnvironment)
         {
             _webHostEnvironment = webHostEnvironment;
         }
-        public async Task<List<(string fileName, string path)>> UploadAsync(string filePath, IFormFileCollection files)
+        public async Task DeleteAsync(string path, string fileName) => File.Delete($"{path}\\{fileName}");
+
+
+        public List<string> GetFiles(string path)
         {
-            string uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, filePath);
+            DirectoryInfo directory = new(path);
+            return directory.GetFiles().Select(f => f.Name).ToList();
+        }
+
+        public bool HasFile(string path, string fileName) => File.Exists($"{path}\\{fileName}");
+
+        public async Task<List<(string fileName, string path)>> UploadAsync(string path, IFormFileCollection files)
+        {
+            string uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, path);
             if (!Directory.Exists(uploadPath))
                 Directory.CreateDirectory(uploadPath);
 
             List<(string fileName, string path)> datas = new();
-            List<bool> results = new();
             foreach (IFormFile file in files)
             {
                 string newFileName = await FileRenameAsync(uploadPath, file.FileName);
                 string fullPath = Path.Combine(uploadPath, newFileName);
                 bool result = await FileCopyAsync(fullPath, file);
                 datas.Add((newFileName, fullPath));
-                results.Add(result);
             }
-            if (results.TrueForAll(r => r.Equals(true)))
-                return datas;
-            return null;
-            //Todo hatalar için exception ayarlanacak.
+            return datas;
         }
-
         public async Task<bool> FileCopyAsync(string filePath, IFormFile file)
         {
             try
@@ -72,7 +78,7 @@ namespace ToBuyAPI.Infrastructure.Services
         /// <param name="path"></param>
         /// <param name="index"></param>
         /// <returns></returns>
-        private string FileNameRegulatory(string fileName, string extension, string path,int index = 2)
+        private string FileNameRegulatory(string fileName, string extension, string path, int index = 2)
         {
             if (File.Exists($"{path}\\{fileName}{extension}"))
             {
