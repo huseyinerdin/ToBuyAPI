@@ -18,6 +18,8 @@ namespace ToBuyAPI.Persistence.Contexts
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ToBuyList> ToBuyLists { get; set; }
+        public DbSet<ToBuyApı.Domain.Entities.File> Files { get; set; }
+        public DbSet<ProductImageFile> ProductImages { get; set; }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
