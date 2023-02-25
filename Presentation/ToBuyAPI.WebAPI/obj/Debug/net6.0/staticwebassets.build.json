@@ -1,11 +1,88 @@
 {
   "Version": 1,
-  "Hash": "/hFHPW/FfjlXTlnDHRINf0ILy2oSKyaAYkzlGcSJX+4=",
+  "Hash": "nfZ1pT3+uMTCU2jEDB82bw6xjjihlwcV2RTYVb3tY1I=",
   "Source": "ToBuyAPI.WebAPI",
   "BasePath": "_content/ToBuyAPI.WebAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "ToBuyAPI.WebAPI\\wwwroot",
+      "Source": "ToBuyAPI.WebAPI",
+      "ContentRoot": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\",
+      "BasePath": "_content/ToBuyAPI.WebAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\erdinh.jpg",
+      "SourceId": "ToBuyAPI.WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\",
+      "BasePath": "_content/ToBuyAPI.WebAPI",
+      "RelativePath": "images/erdinh.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\erdinh.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\erdinh-2.jpg",
+      "SourceId": "ToBuyAPI.WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\",
+      "BasePath": "_content/ToBuyAPI.WebAPI",
+      "RelativePath": "images/erdinh-2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\erdinh-2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\erdinh-2-2.jpg",
+      "SourceId": "ToBuyAPI.WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\",
+      "BasePath": "_content/ToBuyAPI.WebAPI",
+      "RelativePath": "images/erdinh-2-2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\erdinh-2-2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\HakaretSS.png",
+      "SourceId": "ToBuyAPI.WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\",
+      "BasePath": "_content/ToBuyAPI.WebAPI",
+      "RelativePath": "images/HakaretSS.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\HakaretSS.png"
+    }
+  ]
 }

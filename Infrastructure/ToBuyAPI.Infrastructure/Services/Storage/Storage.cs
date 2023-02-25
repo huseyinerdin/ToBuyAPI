@@ -18,13 +18,18 @@ namespace ToBuyAPI.Infrastructure.Services.Storage
             return FileNameRegulatory(newFileName, extension, path, hasFileMethod);
         }
 
-        private string FileNameRegulatory(string fileName, string extension, string path, HasFile hasFileMethod, int index = 2)
+        private string FileNameRegulatory(string fileName, string extension, string path, HasFile hasFileMethod, int index = 1)
         {
-            if (hasFileMethod(path,$"{fileName}{extension}"))
+			string newFileName = $"{fileName}{extension}";
+			if (index > 1)
+			{
+				newFileName = $"{fileName}-{index}{extension}";
+			}
+			if (hasFileMethod(path,$"{newFileName}"))
             {
-                return FileNameRegulatory($"{fileName}-{index}", extension, path, hasFileMethod, index++);
+                return FileNameRegulatory(fileName, extension, path, hasFileMethod, ++index);
             }
-            return fileName + extension;
+            return newFileName;
         }
     }
 }

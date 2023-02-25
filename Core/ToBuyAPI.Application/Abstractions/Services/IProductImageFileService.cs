@@ -10,6 +10,6 @@ namespace ToBuyAPI.Application.Abstractions.Services
 {
 	public interface IProductImageFileService
 	{
-		Task<IResult> AddAsync(string productId, Microsoft.AspNetCore.Http.IFormCollection model);
+		Task<IResult> AddAsync(string productId, Microsoft.AspNetCore.Http.IFormFileCollection model);
 	}
 }

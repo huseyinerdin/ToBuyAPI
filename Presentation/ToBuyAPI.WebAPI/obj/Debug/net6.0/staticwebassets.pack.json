@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\HakaretSS.png",
+      "PackagePath": "staticwebassets\\images\\HakaretSS.png"
+    },
+    {
+      "Id": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\erdinh-2-2.jpg",
+      "PackagePath": "staticwebassets\\images\\erdinh-2-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\erdinh-2.jpg",
+      "PackagePath": "staticwebassets\\images\\erdinh-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\erdinh.jpg",
+      "PackagePath": "staticwebassets\\images\\erdinh.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ToBuyAPI.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.ToBuyAPI.WebAPI.props",
+      "PackagePath": "build\\ToBuyAPI.WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.ToBuyAPI.WebAPI.props",
+      "PackagePath": "buildMultiTargeting\\ToBuyAPI.WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.ToBuyAPI.WebAPI.props",
+      "PackagePath": "buildTransitive\\ToBuyAPI.WebAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

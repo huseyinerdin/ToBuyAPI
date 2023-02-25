@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper.Configuration.Annotations;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +16,7 @@ namespace ToBuyAPI.Application.DTOs.Product
 	{
 		public string Name { get; set; }
 		public string Description { get; set; }
-		public IFormCollection ProductImageFiles { get; set; }
+		public IFormFileCollection ProductImageFiles { get; set; }
 		public List<string> CategoryIds { get; set; }
 	}
 }

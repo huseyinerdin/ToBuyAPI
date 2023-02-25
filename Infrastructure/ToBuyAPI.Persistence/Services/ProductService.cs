@@ -19,18 +19,25 @@ namespace ToBuyAPI.Persistence.Services
 		private readonly IProductImageFileService _productImageFileService;
 		private readonly IProductWriteRepository _productWriteRepository;
 		private readonly IProductReadRepository _productReadRepository;
-		public ProductService(IMapper mapper, IProductWriteRepository productWriteRepository, IProductImageFileService productImageFileService, IProductReadRepository productReadRepository)
+		private readonly ICategoryReadRepository _categoryReadRepository;
+		public ProductService(IMapper mapper, IProductWriteRepository productWriteRepository, IProductImageFileService productImageFileService, IProductReadRepository productReadRepository, ICategoryReadRepository categoryReadRepository)
 		{
 			_mapper = mapper;
 			_productWriteRepository = productWriteRepository;
 			_productImageFileService = productImageFileService;
 			_productReadRepository = productReadRepository;
+			_categoryReadRepository = categoryReadRepository;
 		}
 
 		public async Task<IResult> AddAsync(CreateProduct model)
 		{
 			Result result = new ();
 			Product product = _mapper.Map<Product>(model);
+			foreach (var categoryId in model.CategoryIds)
+			{
+				product.Categories.Add(_categoryReadRepository.GetByIdAsync(categoryId).Result);
+			}
+
 			result.IsSuccess = await _productWriteRepository.AddAsync(product);
 
 			if (result.IsSuccess)

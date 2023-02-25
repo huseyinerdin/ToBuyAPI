@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yhmpa0vzbDzpakW6Bg8ZO+iKBGlL0Jnxbpblxr7OhXPz5S8w8rqNqgzRcPhOqKpB8DJRvwFJTdgPNN0DkVW9/g==",
+  "dgSpecHash": "VWzuyxGDL8vJPbiMDb3DGF24Zb0Ah/FuqtTZDq2LOXkItgFhVn5alq/2HHzsZv74BTdbEVWReTApxVhnI/5r1g==",
   "success": true,
   "projectFilePath": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Infrastructure\\ToBuyAPI.Infrastructure\\ToBuyAPI.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,9 @@
     "C:\\Users\\erdin\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\erdin\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\erdin\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\erdin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\erdin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"

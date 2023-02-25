@@ -17,8 +17,9 @@ namespace ToBuyAPI.WebAPI.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> Add(CreateProduct model, IFormFile files)
+		public async Task<IActionResult> Add([FromForm]CreateProduct model)
 		{
+
 			//model.ProductImageFiles = files;
 			var result = await _productService.AddAsync(model);
 			return result.IsSuccess ? Ok(result) : BadRequest(result);

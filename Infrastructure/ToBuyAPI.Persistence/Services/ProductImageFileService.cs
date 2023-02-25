@@ -25,12 +25,12 @@ namespace ToBuyAPI.Persistence.Services
 			_productImageFileWriteRepository = productImageFileWriteRepository;
 		}
 
-		public async Task<IResult> AddAsync(string productId, Microsoft.AspNetCore.Http.IFormCollection models)
+		public async Task<IResult> AddAsync(string productId, Microsoft.AspNetCore.Http.IFormFileCollection models)
 		{
 			Result result = new();
 
 			#region File Local Upload
-			var uploadResult = await _storageService.UploadAsync("images", (Microsoft.AspNetCore.Http.IFormFileCollection)models);
+			var uploadResult = await _storageService.UploadAsync("images", models);
 			if (uploadResult == null)
 			{
 				result.IsSuccess = false;
@@ -54,7 +54,7 @@ namespace ToBuyAPI.Persistence.Services
 			result.IsSuccess = await _productImageFileWriteRepository.AddRangeAsync(createProductImageFiles);
 			if (result.IsSuccess)
 			{
-				await _productImageFileWriteRepository.SaveAsync();
+				//await _productImageFileWriteRepository.SaveAsync();
 				result.Message = "Resim ekleme işlemi başarılı.";
 			}
 			else

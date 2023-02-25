@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ToBuyApı.Domain.Entities;
 using ToBuyAPI.Application.DTOs.Category;
+using ToBuyAPI.Application.DTOs.Product;
 
 namespace ToBuyAPI.Application.AutoMapper
 {
@@ -19,6 +20,8 @@ namespace ToBuyAPI.Application.AutoMapper
                 .ForMember(x => x.Id, dest => dest.MapFrom(x => Guid.Parse(x.Id)));
             CreateMap<Category, ListItemCategory>()
                 .ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id.ToString()));
+
+            CreateMap<CreateProduct, Product>().ForMember(x=>x.ProductImageFiles,dest=>dest.Ignore());
         }
     }
 }

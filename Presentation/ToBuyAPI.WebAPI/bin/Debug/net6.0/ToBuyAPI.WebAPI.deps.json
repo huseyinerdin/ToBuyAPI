@@ -671,6 +671,7 @@
       },
       "ToBuyAPI.Infrastructure/1.0.0": {
         "dependencies": {
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.2.3",
           "ToBuyAPI.Application": "1.0.0"
         },
         "runtime": {
