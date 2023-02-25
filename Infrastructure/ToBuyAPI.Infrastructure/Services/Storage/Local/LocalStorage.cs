@@ -35,16 +35,23 @@ namespace ToBuyAPI.Infrastructure.Services.Storage.Local
             string uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, path);
             if (!Directory.Exists(uploadPath))
                 Directory.CreateDirectory(uploadPath);
-
-            List<(string fileName, string path)> datas = new();
-            foreach (IFormFile file in files)
+            try
             {
-                string newFileName = FileRename(uploadPath, file.FileName,HasFile);
-                string fullPath = Path.Combine(uploadPath, newFileName);
-                bool result = await FileCopyAsync(fullPath, file);
-                datas.Add((newFileName, fullPath));
+				List<(string fileName, string path)> datas = new();
+				foreach (IFormFile file in files)
+				{
+					string newFileName = FileRename(uploadPath, file.FileName, HasFile);
+					string fullPath = Path.Combine(uploadPath, newFileName);
+					bool result = await FileCopyAsync(fullPath, file);
+					datas.Add((newFileName, fullPath));
+				}
+				return datas;
+			}
+            catch (Exception)
+            {
+                //TODO: Error durumları için Error nesneleri ayarlanmalı.
+                return null;
             }
-            return datas;
         }
         public async Task<bool> FileCopyAsync(string path, IFormFile file)
         {

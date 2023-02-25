@@ -35,6 +35,8 @@ namespace ToBuyAPI.Persistence
 
             //Services
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IProductImageFileService, ProductImageFileService>();
         }
     }
 }
