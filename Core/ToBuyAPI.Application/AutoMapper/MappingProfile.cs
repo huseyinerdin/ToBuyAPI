@@ -14,14 +14,20 @@ namespace ToBuyAPI.Application.AutoMapper
     {
         public MappingProfile()
         {
-            CreateMap<CreateCategory, Category>();
-			CreateMap<Category, CreateCategory>();
+			#region Category
+			CreateMap<CreateCategory, Category>();
 			CreateMap<DeleteCategory, Category>()
-                .ForMember(x => x.Id, dest => dest.MapFrom(x => Guid.Parse(x.Id)));
-            CreateMap<Category, ListItemCategory>()
-                .ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id.ToString()));
+				.ForMember(x => x.Id, dest => dest.MapFrom(x => Guid.Parse(x.Id)));
+			CreateMap<Category, ListItemCategory>()
+				.ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id.ToString()));
+			#endregion
 
-            CreateMap<CreateProduct, Product>().ForMember(x=>x.ProductImageFiles,dest=>dest.Ignore());
-        }
+			#region Product
+			CreateMap<CreateProduct, Product>().ForMember(x => x.ProductImageFiles, dest => dest.Ignore());
+			CreateMap<DeleteProduct, Product>()
+				.ForMember(x => x.Id, dest => dest.MapFrom(x => Guid.Parse(x.Id)));
+			#endregion
+
+		}
     }
 }

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ToBuyAPI.Application.DTOs.Product
 {
-	internal class DeleteProduct
+	public class DeleteProduct
 	{
+		public string Id { get; set; }
 	}
 }
+

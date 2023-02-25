@@ -18,11 +18,13 @@ namespace ToBuyAPI.Persistence.Services
 	{
 		private readonly IStorageService _storageService;
 		private readonly IProductImageFileWriteRepository _productImageFileWriteRepository;
+		private readonly IProductImageFileReadRepository _productImageFileReadRepository;
 
-		public ProductImageFileService(IStorageService storageService, IProductImageFileWriteRepository productImageFileWriteRepository)
+		public ProductImageFileService(IStorageService storageService, IProductImageFileWriteRepository productImageFileWriteRepository, IProductImageFileReadRepository productImageFileReadRepository)
 		{
 			_storageService = storageService;
 			_productImageFileWriteRepository = productImageFileWriteRepository;
+			_productImageFileReadRepository = productImageFileReadRepository;
 		}
 
 		public async Task<IResult> AddAsync(string productId, Microsoft.AspNetCore.Http.IFormFileCollection models)
@@ -63,6 +65,44 @@ namespace ToBuyAPI.Persistence.Services
 			}
 			return result;
 			#endregion
+		}
+
+		public async Task<IResult> DeleteByIdAsync(string id)
+		{
+			Result result = new();
+			ProductImageFile productImageFile = await _productImageFileReadRepository.GetByIdAsync(id);
+			result.IsSuccess =  _productImageFileWriteRepository.Remove(productImageFile);
+			if (result.IsSuccess)
+			{
+				await _storageService.DeleteAsync(productImageFile.Path, productImageFile.FileName);
+				await _productImageFileWriteRepository.SaveAsync();
+				result.Message = "Silme işlemi başarılı.";
+			}
+			else
+			{
+				result.Message = "Silme işlemi başarısız.";
+			}
+			return result;
+		}
+		public async Task<IResult> DeleteAllByProductId(string id)
+		{
+			Result result = new();
+			List<ProductImageFile> productImageFiles =  _productImageFileReadRepository.GetWhere(x=>x.ProductId == Guid.Parse(id)).ToList();
+			result.IsSuccess = _productImageFileWriteRepository.Remove(productImageFiles);
+			if (result.IsSuccess)
+			{
+				foreach (var productImage in productImageFiles)
+				{
+					await _storageService.DeleteAsync(productImage.Path, productImage.FileName);
+				}
+				await _productImageFileWriteRepository.SaveAsync();
+				result.Message = "Silme işlemi başarılı.";
+			}
+			else
+			{
+				result.Message = "Silme işlemi başarısız.";
+			}
+			return result;
 		}
 	}
 }

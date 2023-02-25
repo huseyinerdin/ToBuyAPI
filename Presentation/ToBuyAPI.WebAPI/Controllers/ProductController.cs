@@ -19,9 +19,14 @@ namespace ToBuyAPI.WebAPI.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Add([FromForm]CreateProduct model)
 		{
-
-			//model.ProductImageFiles = files;
 			var result = await _productService.AddAsync(model);
+			return result.IsSuccess ? Ok(result) : BadRequest(result);
+		}
+
+		[HttpDelete]
+		public async Task<IActionResult> Delete(DeleteProduct model)
+		{
+			var result = await _productService.DeleteAsync(model);
 			return result.IsSuccess ? Ok(result) : BadRequest(result);
 		}
 	}

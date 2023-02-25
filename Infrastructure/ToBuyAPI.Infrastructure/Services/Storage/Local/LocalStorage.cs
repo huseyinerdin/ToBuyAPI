@@ -19,8 +19,7 @@ namespace ToBuyAPI.Infrastructure.Services.Storage.Local
         {
             _webHostEnvironment = webHostEnvironment;
         }
-        public async Task DeleteAsync(string path, string fileName) => File.Delete($"{path}\\{fileName}");
-
+        public async Task DeleteAsync(string path, string fileName) =>File.Delete($"{path}\\{fileName}");
 
         public List<string> GetFiles(string path)
         {
@@ -53,7 +52,7 @@ namespace ToBuyAPI.Infrastructure.Services.Storage.Local
                 return null;
             }
         }
-        public async Task<bool> FileCopyAsync(string path, IFormFile file)
+        private async Task<bool> FileCopyAsync(string path, IFormFile file)
         {
             try
             {

@@ -12,11 +12,10 @@ namespace ToBuyAPI.Application.Abstractions.Services
 	public interface IProductService
 	{
 		Task<IResult> AddAsync(CreateProduct model);
-		//Task<IResult> AddRangeAsync(List<CreateCategory> models);
-		//Task<IResult> DeleteAsync(DeleteCategory model);
-		//Task<IResult> DeleteByIdAsync(string id);
-		//Task<IResult> DeleteRangeAsync(List<DeleteCategory> models);
-		//Task<IResult> UpdateAsync(UpdateCategory model);
+		Task<IResult> DeleteAsync(DeleteProduct model);
+		Task<IResult> DeleteByIdAsync(string id);
+		Task<IResult> DeleteRangeAsync(List<DeleteProduct> models);
+		Task<IResult> UpdateAsync(UpdateProduct model);
 
 		//Task<IDataResult<List<ListItemCategory>>> GetAllAsync();
 		//Task<IDataResult<ListItemCategory>> GetByIdAsync(string id);
