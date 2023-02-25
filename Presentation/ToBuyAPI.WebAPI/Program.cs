@@ -1,4 +1,6 @@
 using FluentValidation.AspNetCore;
+using System.Reflection;
+using ToBuyAPI.Application.AutoMapper;
 using ToBuyAPI.Infrastructure;
 using ToBuyAPI.Infrastructure.Filters;
 using ToBuyAPI.Infrastructure.Services.Storage.Local;
@@ -22,6 +24,8 @@ builder.Services.AddControllers(options => options.Filters.Add<ValidationFilter>
 
 // Default validation check disabled
 // TODO=>.ConfigureApiBehaviorOptions(options => options.SuppressModelStateInvalidFilter = true);
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

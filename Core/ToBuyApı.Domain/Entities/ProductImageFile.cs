@@ -16,6 +16,6 @@ namespace ToBuyApı.Domain.Entities
         public Guid ProductId { get; set; }
         public Product Product { get; set; }
         [NotMapped]
-        public override DateTime UpdatedDate { get => base.UpdatedDate; set => base.UpdatedDate = value; }
+        public override DateTime? UpdatedDate { get => base.UpdatedDate; set => base.UpdatedDate = value; }
     }
 }

@@ -4,7 +4,7 @@
 
 namespace ToBuyAPI.Persistence.Migrations
 {
-    public partial class mig_2 : Migration
+    public partial class initial2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -20,7 +20,6 @@ namespace ToBuyAPI.Application.Abstractions.Services
         Task<IResult> UpdateAsync(UpdateCategory model);
 
         Task<IDataResult<List<ListItemCategory>>> GetAllAsync();
-        Task<IDataResult<List<DetailCategory>>> GetAllDetailAsync();
-        Task<IDataResult<DetailCategory>> GetByIdAsync(string id);
+        Task<IDataResult<ListItemCategory>> GetByIdAsync(string id);
     }
 }

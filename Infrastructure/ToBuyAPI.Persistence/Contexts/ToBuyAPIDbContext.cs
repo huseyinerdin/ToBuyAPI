@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ToBuyApı.Domain.Entities;
 using ToBuyApı.Domain.Entities.Common;
+using ToBuyAPI.Persistence.Configurations;
 
 namespace ToBuyAPI.Persistence.Contexts
 {
@@ -14,7 +15,16 @@ namespace ToBuyAPI.Persistence.Contexts
         public ToBuyAPIDbContext(DbContextOptions options) : base(options)
         {
         }
-        public DbSet<Category> Categories { get; set; }
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			base.OnModelCreating(modelBuilder);
+            new CategoryConfiguration().Configure(modelBuilder.Entity<Category>());
+            new CustomerConfiguration().Configure(modelBuilder.Entity<Customer>());
+            new ProductConfiguration().Configure(modelBuilder.Entity<Product>());
+            new ProductImageFileConfiguration().Configure(modelBuilder.Entity<ProductImageFile>());
+            new ToBuyListConfiguration().Configure(modelBuilder.Entity<ToBuyList>());
+		}
+		public DbSet<Category> Categories { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ToBuyList> ToBuyLists { get; set; }

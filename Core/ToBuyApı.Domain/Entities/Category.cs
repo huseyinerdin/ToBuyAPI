@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +12,11 @@ namespace ToBuyApı.Domain.Entities
     {
         public string Name { get; set; }
         public ICollection<Product> Products { get; set; }
+        public ICollection<ToBuyList> ToBuyLists { get; set; }
         public Category()
         {
             Products= new HashSet<Product>();
+            ToBuyLists = new HashSet<ToBuyList>();
         }
     }
 }

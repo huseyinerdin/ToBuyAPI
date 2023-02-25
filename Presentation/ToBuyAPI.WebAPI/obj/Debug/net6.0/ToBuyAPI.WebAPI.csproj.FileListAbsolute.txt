@@ -53,7 +53,6 @@ C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\obj\Deb
 C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\obj\Debug\net6.0\ToBuyAPI.WebAPI.AssemblyInfoInputs.cache
 C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\obj\Debug\net6.0\ToBuyAPI.WebAPI.AssemblyInfo.cs
 C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\obj\Debug\net6.0\ToBuyAPI.WebAPI.csproj.CoreCompileInputs.cache
-C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\obj\Debug\net6.0\ToBuyAPI.WebAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\obj\Debug\net6.0\ToBuyAPI.WebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.ToBuyAPI.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.ToBuyAPI.WebAPI.props

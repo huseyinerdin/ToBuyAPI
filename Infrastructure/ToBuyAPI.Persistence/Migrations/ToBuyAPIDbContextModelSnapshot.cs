@@ -37,6 +37,21 @@ namespace ToBuyAPI.Persistence.Migrations
                     b.ToTable("CategoryProduct");
                 });
 
+            modelBuilder.Entity("CategoryToBuyList", b =>
+                {
+                    b.Property<Guid>("CategoriesId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ToBuyListsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("CategoriesId", "ToBuyListsId");
+
+                    b.HasIndex("ToBuyListsId");
+
+                    b.ToTable("CategoryToBuyList");
+                });
+
             modelBuilder.Entity("ToBuyApı.Domain.Entities.Category", b =>
                 {
                     b.Property<Guid>("Id")
@@ -44,14 +59,15 @@ namespace ToBuyAPI.Persistence.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("date");
 
                     b.HasKey("Id");
 
@@ -65,14 +81,15 @@ namespace ToBuyAPI.Persistence.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("date");
 
                     b.HasKey("Id");
 
@@ -86,25 +103,20 @@ namespace ToBuyAPI.Persistence.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<Guid?>("ToBuyListId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("date");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ToBuyListId");
 
                     b.ToTable("Products");
                 });
@@ -116,11 +128,12 @@ namespace ToBuyAPI.Persistence.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("FileName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Path")
                         .IsRequired()
@@ -131,7 +144,11 @@ namespace ToBuyAPI.Persistence.Migrations
 
                     b.Property<string>("Storage")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("date");
 
                     b.HasKey("Id");
 
@@ -146,24 +163,22 @@ namespace ToBuyAPI.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CompletedDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTime?>("CompletedDate")
+                        .HasColumnType("date");
 
                     b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<Guid>("CustomerId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("date");
 
                     b.HasKey("Id");
 
@@ -187,11 +202,19 @@ namespace ToBuyAPI.Persistence.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ToBuyApı.Domain.Entities.Product", b =>
+            modelBuilder.Entity("CategoryToBuyList", b =>
                 {
+                    b.HasOne("ToBuyApı.Domain.Entities.Category", null)
+                        .WithMany()
+                        .HasForeignKey("CategoriesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ToBuyApı.Domain.Entities.ToBuyList", null)
-                        .WithMany("Products")
-                        .HasForeignKey("ToBuyListId");
+                        .WithMany()
+                        .HasForeignKey("ToBuyListsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ToBuyApı.Domain.Entities.ProductImageFile", b =>
@@ -224,11 +247,6 @@ namespace ToBuyAPI.Persistence.Migrations
             modelBuilder.Entity("ToBuyApı.Domain.Entities.Product", b =>
                 {
                     b.Navigation("ProductImageFiles");
-                });
-
-            modelBuilder.Entity("ToBuyApı.Domain.Entities.ToBuyList", b =>
-                {
-                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

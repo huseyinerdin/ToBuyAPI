@@ -1,13 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ToBuyAPI.Application.Abstractions.Services;
 using ToBuyAPI.Application.Repositories;
 using ToBuyAPI.Persistence.Contexts;
 using ToBuyAPI.Persistence.Repositories;
+using ToBuyAPI.Persistence.Services;
 
 namespace ToBuyAPI.Persistence
 {
@@ -17,6 +20,7 @@ namespace ToBuyAPI.Persistence
         {
             services.AddDbContext<ToBuyAPIDbContext>(options => options.UseSqlServer(Configuration.ConnectionString));
 
+            //Repositories
             services.AddScoped<ICategoryReadRepository, CategoryReadRepository>();
             services.AddScoped<ICategoryWriteRepository, CategoryWriteRepository>();
                     
@@ -28,6 +32,9 @@ namespace ToBuyAPI.Persistence
 
             services.AddScoped<IProductImageFileReadRepository, ProductImageFileReadRepository>();
             services.AddScoped<IProductImageFileWriteRepository, ProductImageFileWriteRepository>();
+
+            //Services
+            services.AddScoped<ICategoryService, CategoryService>();
         }
     }
 }
