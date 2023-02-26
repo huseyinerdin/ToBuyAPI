@@ -15,6 +15,11 @@ namespace ToBuyAPI.Persistence.Contexts
         public ToBuyAPIDbContext(DbContextOptions options) : base(options)
         {
         }
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		{
+            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseLazyLoadingProxies();
+		}
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);

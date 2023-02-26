@@ -10,10 +10,10 @@ using ToBuyAPI.Application.DTOs.Product;
 
 namespace ToBuyAPI.Application.AutoMapper
 {
-    public class MappingProfile : Profile
-    {
-        public MappingProfile()
-        {
+	public class MappingProfile : Profile
+	{
+		public MappingProfile()
+		{
 			#region Category
 			CreateMap<CreateCategory, Category>();
 			CreateMap<DeleteCategory, Category>()
@@ -26,8 +26,11 @@ namespace ToBuyAPI.Application.AutoMapper
 			CreateMap<CreateProduct, Product>().ForMember(x => x.ProductImageFiles, dest => dest.Ignore());
 			CreateMap<DeleteProduct, Product>()
 				.ForMember(x => x.Id, dest => dest.MapFrom(x => Guid.Parse(x.Id)));
+			CreateMap<Product, ListItemProduct>()
+				.ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id.ToString()))
+				.ForMember(x => x.Categories, dest => dest.Ignore());
 			#endregion
 
 		}
-    }
+	}
 }

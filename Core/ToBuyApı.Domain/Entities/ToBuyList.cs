@@ -12,9 +12,9 @@ namespace ToBuyApı.Domain.Entities
     {
         public string Name { get; set; }
         public DateTime? CompletedDate { get; set; }
-        public ICollection<Category> Categories { get; set; }
+        public virtual ICollection<Category> Categories { get; set; }
         public Guid CustomerId { get; set; }
-        public Customer Customer { get; set; }
+        public virtual Customer Customer { get; set; }
         public ToBuyList()
         {
 			Categories = new HashSet<Category>();

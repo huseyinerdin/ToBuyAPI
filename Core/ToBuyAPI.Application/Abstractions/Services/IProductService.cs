@@ -16,8 +16,9 @@ namespace ToBuyAPI.Application.Abstractions.Services
 		Task<IResult> DeleteByIdAsync(string id);
 		Task<IResult> DeleteRangeAsync(List<DeleteProduct> models);
 		Task<IResult> UpdateAsync(UpdateProduct model);
-
-		//Task<IDataResult<List<ListItemCategory>>> GetAllAsync();
-		//Task<IDataResult<ListItemCategory>> GetByIdAsync(string id);
+		Task<IDataResult<List<ListItemProduct>>> GetAllAsync();
+		Task<IDataResult<ListItemProduct>> GetByIdAsync(string id);
+		Task<IDataResult<List<ListItemProduct>>> GetByCategoryIdAsync(string id);
+		Task<IDataResult<List<ListItemProduct>>> GetByListOfCategoryIdAsync(List<string> ids);
 	}
 }

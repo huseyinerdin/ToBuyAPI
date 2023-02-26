@@ -93,7 +93,8 @@ namespace ToBuyAPI.Persistence.Services
 			{
 				foreach (var productImage in productImageFiles)
 				{
-					await _storageService.DeleteAsync(productImage.Path, productImage.FileName);
+					string filePath = productImage.Path.Replace("\\"+productImage.FileName,"");
+					await _storageService.DeleteAsync(filePath, productImage.FileName);
 				}
 				await _productImageFileWriteRepository.SaveAsync();
 				result.Message = "Silme işlemi başarılı.";

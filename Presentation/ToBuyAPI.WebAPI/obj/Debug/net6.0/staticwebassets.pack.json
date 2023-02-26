@@ -1,12 +1,12 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\HakaretSS.png",
-      "PackagePath": "staticwebassets\\images\\HakaretSS.png"
+      "Id": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\CasePhoto.PNG",
+      "PackagePath": "staticwebassets\\images\\CasePhoto.PNG"
     },
     {
-      "Id": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\erdinh-2-2.jpg",
-      "PackagePath": "staticwebassets\\images\\erdinh-2-2.jpg"
+      "Id": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\admin-photo.png",
+      "PackagePath": "staticwebassets\\images\\admin-photo.png"
     },
     {
       "Id": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\erdinh-2.jpg",
@@ -17,8 +17,28 @@
       "PackagePath": "staticwebassets\\images\\erdinh-3.jpg"
     },
     {
+      "Id": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\erdinh-4.jpg",
+      "PackagePath": "staticwebassets\\images\\erdinh-4.jpg"
+    },
+    {
       "Id": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\erdinh.jpg",
       "PackagePath": "staticwebassets\\images\\erdinh.jpg"
+    },
+    {
+      "Id": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\iiiiiiii----iiii-2.png",
+      "PackagePath": "staticwebassets\\images\\iiiiiiii----iiii-2.png"
+    },
+    {
+      "Id": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\iiiiiiii----iiii-3.png",
+      "PackagePath": "staticwebassets\\images\\iiiiiiii----iiii-3.png"
+    },
+    {
+      "Id": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\iiiiiiii----iiii-4.png",
+      "PackagePath": "staticwebassets\\images\\iiiiiiii----iiii-4.png"
+    },
+    {
+      "Id": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\iiiiiiii----iiii-5.png",
+      "PackagePath": "staticwebassets\\images\\iiiiiiii----iiii-5.png"
     },
     {
       "Id": "C:\\Users\\erdin\\OneDrive\\Masaüstü\\ToBuyAPI\\Presentation\\ToBuyAPI.WebAPI\\wwwroot\\images\\iiiiiiii----iiii.png",

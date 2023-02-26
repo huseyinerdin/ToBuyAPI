@@ -15,7 +15,7 @@ namespace ToBuyAPI.Persistence
         public ToBuyAPIDbContext CreateDbContext(string[] args)
         {
             DbContextOptionsBuilder<ToBuyAPIDbContext> dbContextOptionsBuilder = new();
-            dbContextOptionsBuilder.UseSqlServer(Configuration.ConnectionString);
+            dbContextOptionsBuilder.UseLazyLoadingProxies().UseSqlServer(Configuration.ConnectionString);
             return new ToBuyAPIDbContext(dbContextOptionsBuilder.Options);
         }
     }

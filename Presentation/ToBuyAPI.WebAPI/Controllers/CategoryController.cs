@@ -41,7 +41,7 @@ namespace ToBuyAPI.WebAPI.Controllers
 		}
 
 		[HttpDelete("{id}")]
-		public async Task<IActionResult> DeleteById([FromRoute] string id)
+		public async Task<IActionResult> DeleteById([FromRoute]string id)
 		{
 			var result = await _categoryService.DeleteByIdAsync(id);
 			return result.IsSuccess ? Ok(result) : BadRequest(result);

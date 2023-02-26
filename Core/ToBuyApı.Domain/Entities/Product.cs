@@ -11,8 +11,8 @@ namespace ToBuyApı.Domain.Entities
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public ICollection<ProductImageFile> ProductImageFiles { get; set; }
-        public ICollection<Category> Categories { get; set; }
+        public virtual ICollection<ProductImageFile> ProductImageFiles { get; set; }
+        public virtual ICollection<Category> Categories { get; set; }
         public Product()
         {
             Categories= new HashSet<Category>();

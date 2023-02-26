@@ -12,6 +12,6 @@ namespace ToBuyAPI.Application.Abstractions.Services
 	{
 		Task<IResult> AddAsync(string productId, Microsoft.AspNetCore.Http.IFormFileCollection model);
 		Task<IResult> DeleteByIdAsync(string id);
-		Task<IResult> DeleteAllByProductId(string id)
+		Task<IResult> DeleteAllByProductId(string id);
 	}
 }

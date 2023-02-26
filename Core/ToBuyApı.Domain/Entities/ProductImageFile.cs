@@ -14,7 +14,7 @@ namespace ToBuyApı.Domain.Entities
         public string Path { get; set; }
         public string Storage { get; set; }
         public Guid ProductId { get; set; }
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
         [NotMapped]
         public override DateTime? UpdatedDate { get => base.UpdatedDate; set => base.UpdatedDate = value; }
     }

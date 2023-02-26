@@ -10,7 +10,7 @@ namespace ToBuyApı.Domain.Entities
     public class Customer : BaseEntity
     {
         public string Name { get; set; }
-        public ICollection<ToBuyList> ToBuyLists { get; set; }
+        public virtual ICollection<ToBuyList> ToBuyLists { get; set; }
         public Customer()
         {
             ToBuyLists= new HashSet<ToBuyList>();

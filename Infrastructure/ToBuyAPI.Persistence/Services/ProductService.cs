@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using ToBuyApı.Domain.Entities;
 using ToBuyAPI.Application.Abstractions.Result;
 using ToBuyAPI.Application.Abstractions.Services;
+using ToBuyAPI.Application.DTOs.Category;
 using ToBuyAPI.Application.DTOs.Product;
 using ToBuyAPI.Application.Repositories;
 using ToBuyAPI.Persistence.Repositories;
@@ -33,9 +34,9 @@ namespace ToBuyAPI.Persistence.Services
 		#region Write Methods
 		public async Task<IResult> AddAsync(CreateProduct model)
 		{
-			Result result = new ();
+			Result result = new();
 			Product product = _mapper.Map<Product>(model);
-			List<Category> categories =  _categoryReadRepository.GetWhere(x=>model.CategoryIds.Contains(x.Id.ToString())).ToList();
+			List<Category> categories = _categoryReadRepository.GetWhere(x => model.CategoryIds.Contains(x.Id.ToString())).ToList();
 			foreach (var category in categories)
 			{
 				product.Categories.Add(category);
@@ -114,14 +115,17 @@ namespace ToBuyAPI.Persistence.Services
 			}
 			product.Name = model.Name;
 			product.Description = model.Description;
-			List<Category> categories = _categoryReadRepository.GetWhere(x => model.CategoryIds.Contains(x.Id.ToString())).ToList();
-			product.Categories = categories;
-			if (model.isImagesUpdated)
+			product.Categories = _categoryReadRepository.GetWhere(x=>model.CategoryIds.Contains(x.Id.ToString())).ToList();
+			result.IsSuccess = _productWriteRepository.Update(product);
+			if (result.IsSuccess)
 			{
-				await _productImageFileService.DeleteAllByProductId(product.Id.ToString());
-				var pictureResult = await _productImageFileService.AddAsync(product.Id.ToString(), model.ProductImageFiles);
+				if (model.isImagesUpdated)
+				{
+					await _productImageFileService.DeleteAllByProductId(product.Id.ToString());
+					await _productImageFileService.AddAsync(product.Id.ToString(), model.ProductImageFiles);
+				}
+				result.Message = "Ürün Güncelleme işlemi başarılı. ";
 				await _productWriteRepository.SaveAsync();
-				result.Message = "Ürün Güncelleme işlemi başarılı. " + pictureResult.Message;
 			}
 			else
 			{
@@ -131,7 +135,76 @@ namespace ToBuyAPI.Persistence.Services
 		}
 		#endregion
 		#region Read Methods
-		public async Task<IDataResult<ListItemProduct>> 
+		public async Task<IDataResult<List<ListItemProduct>>> GetAllAsync()
+		{
+			DataResult<List<ListItemProduct>> dataResult = new();
+			List<Product> products = _productReadRepository.GetAll(false).ToList();
+			if (products==null)
+			{
+				dataResult.IsSuccess = false;
+				dataResult.Message = "Verileri okuma işlemi başarısız.";
+			}
+			else
+			{
+				dataResult.IsSuccess = true;
+				dataResult.Message = "Verileri okuma işlemi başarılı.";
+				dataResult.Result = _mapper.Map<List<ListItemProduct>>(products);
+			}
+			return dataResult;
+		}
+		public async Task<IDataResult<ListItemProduct>> GetByIdAsync(string id)
+		{
+			DataResult<ListItemProduct> dataResult = new();
+			Product product = await _productReadRepository.GetByIdAsync(id);
+			if (product == null)
+			{
+				dataResult.IsSuccess = false;
+				dataResult.Message = "Verileri okuma işlemi başarısız.";
+			}
+			else
+			{
+				dataResult.IsSuccess = true;
+				dataResult.Message = "Verileri okuma işlemi başarılı.";
+				dataResult.Result = _mapper.Map<ListItemProduct>(product);
+				dataResult.Result.Categories = _mapper.Map<List<ListItemCategory>>(product.Categories);
+			}
+			return dataResult;
+		}
+		public async Task<IDataResult<List<ListItemProduct>>> GetByCategoryIdAsync(string id)
+		{
+			DataResult<List<ListItemProduct>> dataResult = new();
+			List<Product> products = _productReadRepository.GetWhere(x=>x.Categories.Any(y=>y.Id.ToString()==id)).ToList();
+			if (products == null)
+			{
+				dataResult.IsSuccess = false;
+				dataResult.Message = "Verileri okuma işlemi başarısız.";
+			}
+			else
+			{
+				dataResult.IsSuccess = true;
+				dataResult.Message = "Verileri okuma işlemi başarılı.";
+				dataResult.Result = _mapper.Map<List<ListItemProduct>>(products);
+			}
+			return dataResult;
+		}
+		public async Task<IDataResult<List<ListItemProduct>>> GetByListOfCategoryIdAsync(List<string> ids)
+		{
+			DataResult<List<ListItemProduct>> dataResult = new();
+			List<Product> products = _productReadRepository.GetWhere(x => x.Categories.Any(y => ids.Contains(y.Id.ToString()))).ToList();
+			if (products == null)
+			{
+				dataResult.IsSuccess = false;
+				dataResult.Message = "Verileri okuma işlemi başarısız.";
+			}
+			else
+			{
+				dataResult.IsSuccess = true;
+				dataResult.Message = "Verileri okuma işlemi başarılı.";
+				dataResult.Result = _mapper.Map<List<ListItemProduct>>(products);
+			}
+			return dataResult;
+		}
+
 		#endregion
 	}
 }
