@@ -33,10 +33,14 @@ namespace ToBuyAPI.Persistence
             services.AddScoped<IProductImageFileReadRepository, ProductImageFileReadRepository>();
             services.AddScoped<IProductImageFileWriteRepository, ProductImageFileWriteRepository>();
 
+            services.AddScoped<IToBuyListReadRepository, ToBuyListReadRepository>();
+            services.AddScoped<IToBuyListWriteRepository, ToBuyListWriteRepository>();
+
             //Services
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IProductImageFileService, ProductImageFileService>();
+            services.AddScoped<IToBuyListService, ToBuyListService>();
         }
     }
 }

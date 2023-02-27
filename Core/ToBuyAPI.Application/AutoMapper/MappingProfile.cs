@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using ToBuyApı.Domain.Entities;
 using ToBuyAPI.Application.DTOs.Category;
 using ToBuyAPI.Application.DTOs.Product;
+using ToBuyAPI.Application.DTOs.ToBuyList;
 
 namespace ToBuyAPI.Application.AutoMapper
 {
@@ -29,6 +30,15 @@ namespace ToBuyAPI.Application.AutoMapper
 			CreateMap<Product, ListItemProduct>()
 				.ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id.ToString()))
 				.ForMember(x => x.Categories, dest => dest.Ignore());
+			#endregion
+
+			#region ToBuyList
+			CreateMap<CreateToBuyList, ToBuyList>().ForMember(x => x.CustomerId, dest => dest.MapFrom(x => Guid.Parse(x.CustomerId)));
+			CreateMap<DeleteToBuyList, ToBuyList>().ForMember(x => x.Id, dest => dest.MapFrom(x => Guid.Parse(x.Id)));
+			CreateMap<ToBuyList, ListItemToBuyList>()
+				.ForMember(x => x.Categories, dest => dest.Ignore())
+				.ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id.ToString()))
+				.ForMember(x => x.CustomerId, dest => dest.MapFrom(x => x.CustomerId.ToString()));
 			#endregion
 
 		}
