@@ -8,6 +8,6 @@ namespace ToBuyAPI.Application.DTOs.ToBuyList
 		public string Name { get; set; }
 		public DateTime? CompletedDate { get; set; }
 		public List<ListItemCategory> Categories { get; set; }
-		public string CustomerId { get; set; }
+		public string AppUserId { get; set; }
 	}
 }

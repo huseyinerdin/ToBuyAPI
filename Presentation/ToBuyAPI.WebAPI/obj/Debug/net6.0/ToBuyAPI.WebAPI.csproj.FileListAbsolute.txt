@@ -88,7 +88,12 @@ C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\bin\Deb
 C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\bin\Debug\net6.0\ToBuyAPI.Infrastructure.pdb
 C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\obj\Debug\net6.0\ToBuyAPI.WebAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\bin\Debug\net6.0\ToBuyAPI.WebAPI.staticwebassets.runtime.json
 C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\bin\Debug\net6.0\Castle.Core.dll
 C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\erdin\OneDrive\Masaüstü\ToBuyAPI\Presentation\ToBuyAPI.WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

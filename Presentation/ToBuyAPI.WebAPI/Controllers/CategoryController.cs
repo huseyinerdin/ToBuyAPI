@@ -1,13 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ToBuyAPI.Application.Abstractions.Services;
 using ToBuyAPI.Application.DTOs.Category;
-using ToBuyAPI.Persistence.Services.ResultService;
 
 namespace ToBuyAPI.WebAPI.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
+	[Authorize(AuthenticationSchemes ="General")]
 	public class CategoryController : ControllerBase
 	{
 		private readonly ICategoryService _categoryService;
@@ -18,6 +18,7 @@ namespace ToBuyAPI.WebAPI.Controllers
 		}
 		#region Post Methods
 		[HttpPost]
+		[Authorize(policy:"Admin")]
 		public async Task<IActionResult> Add(CreateCategory model)
 		{
 			var result = await _categoryService.AddAsync(model);
@@ -25,6 +26,7 @@ namespace ToBuyAPI.WebAPI.Controllers
 		}
 
 		[HttpPost("Range")]
+		[Authorize(policy: "Admin")]
 		public async Task<IActionResult> AddRange(List<CreateCategory> models)
 		{
 			var result = await _categoryService.AddRangeAsync(models);
@@ -34,6 +36,7 @@ namespace ToBuyAPI.WebAPI.Controllers
 
 		#region Delete Methods
 		[HttpDelete]
+		[Authorize(policy: "Admin")]
 		public async Task<IActionResult> Delete(DeleteCategory model)
 		{
 			var result = await _categoryService.DeleteAsync(model);
@@ -41,6 +44,7 @@ namespace ToBuyAPI.WebAPI.Controllers
 		}
 
 		[HttpDelete("{id}")]
+		[Authorize(policy: "Admin")]
 		public async Task<IActionResult> DeleteById([FromRoute]string id)
 		{
 			var result = await _categoryService.DeleteByIdAsync(id);
@@ -48,6 +52,7 @@ namespace ToBuyAPI.WebAPI.Controllers
 		}
 
 		[HttpDelete("Range")]
+		[Authorize(policy: "Admin")]
 		public async Task<IActionResult> DeleteRange(List<DeleteCategory> models)
 		{
 			var result = await _categoryService.DeleteRangeAsync(models);
@@ -57,6 +62,7 @@ namespace ToBuyAPI.WebAPI.Controllers
 
 		#region Put Methods
 		[HttpPut]
+		[Authorize(policy: "Admin")]
 		public async Task<IActionResult> Update(UpdateCategory model)
 		{
 			var result = await _categoryService.UpdateAsync(model);

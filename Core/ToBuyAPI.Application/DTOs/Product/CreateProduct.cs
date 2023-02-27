@@ -1,14 +1,4 @@
-﻿using AutoMapper.Configuration.Annotations;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ToBuyApı.Domain.Entities;
-using ToBuyAPI.Application.DTOs.Category;
+﻿using Microsoft.AspNetCore.Http;
 
 namespace ToBuyAPI.Application.DTOs.Product
 {

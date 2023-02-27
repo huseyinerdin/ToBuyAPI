@@ -1,11 +1,7 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using ToBuyApı.Domain.Entities;
+using ToBuyApı.Domain.Entities.Identity;
+using ToBuyAPI.Application.DTOs.AppUser;
 using ToBuyAPI.Application.DTOs.Category;
 using ToBuyAPI.Application.DTOs.Product;
 using ToBuyAPI.Application.DTOs.ToBuyList;
@@ -34,12 +30,15 @@ namespace ToBuyAPI.Application.AutoMapper
 			#endregion
 
 			#region ToBuyList
-			CreateMap<CreateToBuyList, ToBuyList>().ForMember(x => x.CustomerId, dest => dest.MapFrom(x => Guid.Parse(x.CustomerId)));
+			CreateMap<CreateToBuyList, ToBuyList>();
 			CreateMap<DeleteToBuyList, ToBuyList>().ForMember(x => x.Id, dest => dest.MapFrom(x => Guid.Parse(x.Id)));
 			CreateMap<ToBuyList, ListItemToBuyList>()
 				.ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id.ToString()))
-				.ForMember(x => x.CustomerId, dest => dest.MapFrom(x => x.CustomerId.ToString()))
 				.ForMember(x => x.Categories, dest => dest.Ignore());
+			#endregion
+
+			#region AppUser
+			CreateMap<CreateAppUser, AppUser>();
 			#endregion
 
 		}

@@ -1,14 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ToBuyAPI.Application.Abstractions.Services;
-using ToBuyAPI.Application.DTOs.Product;
 using ToBuyAPI.Application.DTOs.ToBuyList;
-using ToBuyAPI.Persistence.Services;
 
 namespace ToBuyAPI.WebAPI.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
+	[Authorize(AuthenticationSchemes = "General")]
 	public class ToBuyListController : ControllerBase
 	{
 		private readonly IToBuyListService _toBuyListService;
@@ -60,6 +59,7 @@ namespace ToBuyAPI.WebAPI.Controllers
 
 		#region Get Methods
 		[HttpGet]
+		[Authorize(policy: "Admin")]
 		public async Task<IActionResult> GetAll()
 		{
 			var result = await _toBuyListService.GetAllAsync();

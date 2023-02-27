@@ -19,8 +19,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToBuyAPI.WebAPI", "Presenta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToBuyAPI.Persistence", "Infrastructure\ToBuyAPI.Persistence\ToBuyAPI.Persistence.csproj", "{A0ADA9D3-E815-4F94-AFAB-7BDE59563855}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToBuyAPI.WebUI", "Presentation\ToBuyAPI.WebUI\ToBuyAPI.WebUI.csproj", "{358E9F7A-07B9-4A6D-82E9-449579E327B5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +45,6 @@ Global
 		{A0ADA9D3-E815-4F94-AFAB-7BDE59563855}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0ADA9D3-E815-4F94-AFAB-7BDE59563855}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0ADA9D3-E815-4F94-AFAB-7BDE59563855}.Release|Any CPU.Build.0 = Release|Any CPU
-		{358E9F7A-07B9-4A6D-82E9-449579E327B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{358E9F7A-07B9-4A6D-82E9-449579E327B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{358E9F7A-07B9-4A6D-82E9-449579E327B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{358E9F7A-07B9-4A6D-82E9-449579E327B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,7 +55,6 @@ Global
 		{EA489538-5585-4DFF-BE9D-5D835DF221F9} = {0C01280D-E1DC-4E58-8387-DF7B08389253}
 		{AE234B1B-ABF5-462B-883D-79620D77087E} = {CDBCD32E-93F1-4F47-9F82-5EC06FD140D3}
 		{A0ADA9D3-E815-4F94-AFAB-7BDE59563855} = {0C01280D-E1DC-4E58-8387-DF7B08389253}
-		{358E9F7A-07B9-4A6D-82E9-449579E327B5} = {CDBCD32E-93F1-4F47-9F82-5EC06FD140D3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8286D9D8-10FD-4B81-BCA8-1F8B69C462E1}

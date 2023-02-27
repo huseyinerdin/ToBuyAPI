@@ -1,13 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
 using ToBuyAPI.Application.Abstractions.Storage.Local;
-using ToBuyAPI.Infrastructure.Operations;
 
 namespace ToBuyAPI.Infrastructure.Services.Storage.Local
 {

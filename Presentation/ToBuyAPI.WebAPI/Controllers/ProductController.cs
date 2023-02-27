@@ -1,13 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ToBuyAPI.Application.Abstractions.Services;
 using ToBuyAPI.Application.DTOs.Product;
-using ToBuyAPI.Persistence.Services;
 
 namespace ToBuyAPI.WebAPI.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
+	[Authorize(AuthenticationSchemes = "General")]
 	public class ProductController : ControllerBase
 	{
 		private readonly IProductService _productService;
@@ -18,6 +18,7 @@ namespace ToBuyAPI.WebAPI.Controllers
 		}
 		#region Post Methods
 		[HttpPost]
+		[Authorize(policy: "Admin")]
 		public async Task<IActionResult> Add([FromForm]CreateProduct model)
 		{
 			var result = await _productService.AddAsync(model);
@@ -27,6 +28,7 @@ namespace ToBuyAPI.WebAPI.Controllers
 
 		#region Delete Methods
 		[HttpDelete]
+		[Authorize(policy: "Admin")]
 		public async Task<IActionResult> Delete(DeleteProduct model)
 		{
 			var result = await _productService.DeleteAsync(model);
@@ -34,6 +36,7 @@ namespace ToBuyAPI.WebAPI.Controllers
 		}
 
 		[HttpDelete("{id}")]
+		[Authorize(policy: "Admin")]
 		public async Task<IActionResult> DeleteById([FromRoute] string id)
 		{
 			var result = await _productService.DeleteByIdAsync(id);
@@ -41,6 +44,7 @@ namespace ToBuyAPI.WebAPI.Controllers
 		}
 
 		[HttpDelete("Range")]
+		[Authorize(policy: "Admin")]
 		public async Task<IActionResult> DeleteRange(List<DeleteProduct> models)
 		{
 			var result = await _productService.DeleteRangeAsync(models);
@@ -50,6 +54,7 @@ namespace ToBuyAPI.WebAPI.Controllers
 
 		#region Put Methods
 		[HttpPut]
+		[Authorize(policy: "Admin")]
 		public async Task<IActionResult> Update([FromForm]UpdateProduct model)
 		{
 			var result = await _productService.UpdateAsync(model);

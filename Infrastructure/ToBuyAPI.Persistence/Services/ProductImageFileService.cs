@@ -1,15 +1,8 @@
-﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ToBuyApı.Domain.Entities;
+﻿using ToBuyApı.Domain.Entities;
 using ToBuyAPI.Application.Abstractions.Result;
 using ToBuyAPI.Application.Abstractions.Services;
 using ToBuyAPI.Application.Abstractions.Storage;
 using ToBuyAPI.Application.Repositories;
-using ToBuyAPI.Persistence.Repositories;
 using ToBuyAPI.Persistence.Services.ResultService;
 
 namespace ToBuyAPI.Persistence.Services

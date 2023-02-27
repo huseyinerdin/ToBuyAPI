@@ -19,8 +19,4 @@
     <ProjectReference Include="..\ToBuyApı.Domain\ToBuyApı.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Validators\" />
-  </ItemGroup>
-
 </Project>

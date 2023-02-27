@@ -1,4 +1,5 @@
-﻿using ToBuyAPI.Application.DTOs.Category;
+﻿using System.ComponentModel.DataAnnotations;
+using ToBuyAPI.Application.DTOs.Category;
 
 namespace ToBuyAPI.Application.DTOs.ToBuyList
 {
@@ -8,8 +9,9 @@ namespace ToBuyAPI.Application.DTOs.ToBuyList
 		public string Name { get; set; }
 		public bool IsCompleted { get; set; }
 		public DateTime? CompletedDate { get; set; }
+		[MinLength(2)]
 		public List<string> CategoryIds { get; set; }
-		public string CustomerId { get; set; }
+		public string AppUserId { get; set; }
 
 	}
 }

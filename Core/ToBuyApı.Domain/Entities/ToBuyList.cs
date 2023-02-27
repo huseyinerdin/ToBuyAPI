@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using ToBuyApı.Domain.Entities.Common;
+﻿using ToBuyApı.Domain.Entities.Common;
+using ToBuyApı.Domain.Entities.Identity;
 
 namespace ToBuyApı.Domain.Entities
 {
@@ -13,8 +8,8 @@ namespace ToBuyApı.Domain.Entities
         public string Name { get; set; }
         public DateTime? CompletedDate { get; set; }
         public virtual ICollection<Category> Categories { get; set; }
-        public Guid CustomerId { get; set; }
-        public virtual Customer Customer { get; set; }
+        public string AppUserId { get; set; }
+        public virtual AppUser AppUser { get; set; }
         public ToBuyList()
         {
 			Categories = new HashSet<Category>();

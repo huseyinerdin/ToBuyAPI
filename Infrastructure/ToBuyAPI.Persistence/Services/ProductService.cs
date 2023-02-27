@@ -1,17 +1,10 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ToBuyApı.Domain.Entities;
 using ToBuyAPI.Application.Abstractions.Result;
 using ToBuyAPI.Application.Abstractions.Services;
 using ToBuyAPI.Application.DTOs.Category;
 using ToBuyAPI.Application.DTOs.Product;
 using ToBuyAPI.Application.Repositories;
-using ToBuyAPI.Persistence.Repositories;
 using ToBuyAPI.Persistence.Services.ResultService;
 
 namespace ToBuyAPI.Persistence.Services
@@ -135,6 +128,7 @@ namespace ToBuyAPI.Persistence.Services
 			return result;
 		}
 		#endregion
+
 		#region Read Methods
 		public async Task<IDataResult<List<ListItemProduct>>> GetAllAsync()
 		{

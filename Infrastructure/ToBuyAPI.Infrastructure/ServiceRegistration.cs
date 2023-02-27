@@ -1,11 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ToBuyAPI.Application.Abstractions.JWT;
 using ToBuyAPI.Application.Abstractions.Storage;
-using ToBuyAPI.Infrastructure.Services;
+using ToBuyAPI.Infrastructure.Services.JWT;
 using ToBuyAPI.Infrastructure.Services.Storage;
 
 namespace ToBuyAPI.Infrastructure
@@ -15,6 +11,7 @@ namespace ToBuyAPI.Infrastructure
         public static void AddInfrastructureServices(this IServiceCollection services)
         {
             services.AddScoped<IStorageService, StorageService>();
+            services.AddScoped<ITokenHandler, TokenHandler>();
         }
 
         public static void AddStorage<T>(this IServiceCollection services) where T : Storage,IStorage

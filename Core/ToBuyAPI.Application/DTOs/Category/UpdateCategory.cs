@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ToBuyAPI.Application.DTOs.Product;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ToBuyAPI.Application.DTOs.Category
 {
-    public class UpdateCategory
+	public class UpdateCategory
     {
 		[Required]
 		public string Id { get; set; }

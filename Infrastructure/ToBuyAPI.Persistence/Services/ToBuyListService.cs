@@ -1,18 +1,10 @@
 ﻿using AutoMapper;
-using AutoMapper.Internal;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ToBuyApı.Domain.Entities;
 using ToBuyAPI.Application.Abstractions.Result;
 using ToBuyAPI.Application.Abstractions.Services;
 using ToBuyAPI.Application.DTOs.Category;
-using ToBuyAPI.Application.DTOs.Product;
 using ToBuyAPI.Application.DTOs.ToBuyList;
 using ToBuyAPI.Application.Repositories;
-using ToBuyAPI.Persistence.Repositories;
 using ToBuyAPI.Persistence.Services.ResultService;
 
 namespace ToBuyAPI.Persistence.Services
@@ -113,7 +105,7 @@ namespace ToBuyAPI.Persistence.Services
 				return result;
 			}
 			toBuyList.Name = model.Name;
-			toBuyList.CustomerId = Guid.Parse(model.CustomerId);
+			toBuyList.AppUserId = model.AppUserId;
 			if (model.IsCompleted)
 			{
 				toBuyList.CompletedDate = DateTime.Now;
