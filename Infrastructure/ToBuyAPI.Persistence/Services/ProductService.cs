@@ -115,6 +115,7 @@ namespace ToBuyAPI.Persistence.Services
 			}
 			product.Name = model.Name;
 			product.Description = model.Description;
+			product.Categories.Clear();
 			product.Categories = _categoryReadRepository.GetWhere(x=>model.CategoryIds.Contains(x.Id.ToString())).ToList();
 			result.IsSuccess = _productWriteRepository.Update(product);
 			if (result.IsSuccess)

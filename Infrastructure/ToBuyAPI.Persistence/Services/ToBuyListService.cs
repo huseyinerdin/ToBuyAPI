@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,11 @@ using System.Threading.Tasks;
 using ToBuyApı.Domain.Entities;
 using ToBuyAPI.Application.Abstractions.Result;
 using ToBuyAPI.Application.Abstractions.Services;
+using ToBuyAPI.Application.DTOs.Category;
+using ToBuyAPI.Application.DTOs.Product;
 using ToBuyAPI.Application.DTOs.ToBuyList;
 using ToBuyAPI.Application.Repositories;
+using ToBuyAPI.Persistence.Repositories;
 using ToBuyAPI.Persistence.Services.ResultService;
 
 namespace ToBuyAPI.Persistence.Services
@@ -114,7 +118,9 @@ namespace ToBuyAPI.Persistence.Services
 			{
 				toBuyList.CompletedDate = DateTime.Now;
 			}
+			toBuyList.Categories.Clear();
 			toBuyList.Categories = _categoryReadRepository.GetWhere(x => model.CategoryIds.Contains(x.Id.ToString())).ToList();
+
 			result.IsSuccess = _toBuyListWriteRepository.Update(toBuyList);
 			if (result.IsSuccess)
 			{
@@ -126,6 +132,44 @@ namespace ToBuyAPI.Persistence.Services
 				result.Message = "Güncelleme işlemi başarısız.";
 			}
 			return result;
+		}
+		#endregion
+
+		#region Read Methods
+		public async Task<IDataResult<List<ListItemToBuyList>>> GetAllAsync()
+		{
+			DataResult<List<ListItemToBuyList>> dataResult = new();
+			List<ToBuyList> toBuyLists = _toBuyListReadRepository.GetAll(false).ToList();
+			if (toBuyLists == null)
+			{
+				dataResult.IsSuccess = false;
+				dataResult.Message = "Verileri okuma işlemi başarısız.";
+			}
+			else
+			{
+				dataResult.IsSuccess = true;
+				dataResult.Message = "Verileri okuma işlemi başarılı.";
+				dataResult.Result = _mapper.Map<List<ListItemToBuyList>>(toBuyLists);
+			}
+			return dataResult;
+		}
+		public async Task<IDataResult<ListItemToBuyList>> GetByIdAsync(string id)
+		{
+			DataResult<ListItemToBuyList> dataResult = new();
+			ToBuyList toBuyList = await _toBuyListReadRepository.GetByIdAsync(id);
+			if (toBuyList == null)
+			{
+				dataResult.IsSuccess = false;
+				dataResult.Message = "Verileri okuma işlemi başarısız.";
+			}
+			else
+			{
+				dataResult.IsSuccess = true;
+				dataResult.Message = "Verileri okuma işlemi başarılı.";
+				dataResult.Result = _mapper.Map<ListItemToBuyList>(toBuyList);
+				dataResult.Result.Categories = _mapper.Map<List<ListItemCategory>>(toBuyList.Categories);
+			}
+			return dataResult;
 		}
 		#endregion
 	}

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using ToBuyApı.Domain.Entities;
@@ -36,9 +37,9 @@ namespace ToBuyAPI.Application.AutoMapper
 			CreateMap<CreateToBuyList, ToBuyList>().ForMember(x => x.CustomerId, dest => dest.MapFrom(x => Guid.Parse(x.CustomerId)));
 			CreateMap<DeleteToBuyList, ToBuyList>().ForMember(x => x.Id, dest => dest.MapFrom(x => Guid.Parse(x.Id)));
 			CreateMap<ToBuyList, ListItemToBuyList>()
-				.ForMember(x => x.Categories, dest => dest.Ignore())
 				.ForMember(x => x.Id, dest => dest.MapFrom(x => x.Id.ToString()))
-				.ForMember(x => x.CustomerId, dest => dest.MapFrom(x => x.CustomerId.ToString()));
+				.ForMember(x => x.CustomerId, dest => dest.MapFrom(x => x.CustomerId.ToString()))
+				.ForMember(x => x.Categories, dest => dest.Ignore());
 			#endregion
 
 		}
