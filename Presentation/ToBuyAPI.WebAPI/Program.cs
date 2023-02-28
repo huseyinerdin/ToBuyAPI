@@ -25,11 +25,6 @@ builder.Services.AddCors(
 
 // Validation filter added for validation checks on the backend.
 builder.Services.AddControllers(options => options.Filters.Add<ValidationFilter>());
-// TODO=>.AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<Buraya valýdatorlardan býrýnýn adý gelmesý yeter>()).;
-
-// Default validation check disabled
-// TODO=>.ConfigureApiBehaviorOptions(options => options.SuppressModelStateInvalidFilter = true);
-
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
