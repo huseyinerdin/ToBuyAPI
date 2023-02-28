@@ -163,6 +163,23 @@ namespace ToBuyAPI.Persistence.Services
 			}
 			return dataResult;
 		}
+		public async Task<IDataResult<List<ListItemToBuyList>>> GetAllAsync(string id)
+		{
+			DataResult<List<ListItemToBuyList>> dataResult = new();
+			List<ToBuyList> toBuyLists = _toBuyListReadRepository.GetWhere(x=>x.AppUserId==id).ToList();
+			if (toBuyLists == null)
+			{
+				dataResult.IsSuccess = false;
+				dataResult.Message = "Verileri okuma işlemi başarısız.";
+			}
+			else
+			{
+				dataResult.IsSuccess = true;
+				dataResult.Message = "Verileri okuma işlemi başarılı.";
+				dataResult.Result = _mapper.Map<List<ListItemToBuyList>>(toBuyLists);
+			}
+			return dataResult;
+		}
 		#endregion
 	}
 }

@@ -281,22 +281,33 @@ namespace ToBuyAPI.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "22e814cc-a282-4782-8acc-b5ce39aa6245", "5f931eff-7c3e-4253-9f6a-a2093bdf56b4", "Admin", "ADMIN" });
-
-            migrationBuilder.InsertData(
-                table: "AspNetRoles",
-                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "6875ce90-2d57-4313-810d-d47a066da020", "2e7f6eb3-34da-4af5-83bf-e8855066e166", "User", "USER" });
+                values: new object[,]
+                {
+                    { "65e96e00-394b-41ff-a065-e4396ee7de0e", "7dea2eb6-0c33-427b-9d2f-64205eba868e", "User", "USER" },
+                    { "8874edef-39d5-43d2-987e-9fe323d0524d", "dabdcc23-6e4c-48ba-b166-d2ecc5ce0c1e", "Admin", "ADMIN" }
+                });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Country", "Email", "EmailConfirmed", "FullName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1b7ed90f-81b0-42e1-b00f-bd122112a405", 0, "1dc13090-0a7b-4f3c-8cfd-37130b82754d", "Türkiye", null, false, "Admin", false, null, null, "ADMIN", "AQAAAAEAACcQAAAAEJJWu/B1cm36SFOPlxArIbQInsjE1wf11Eh9pK90leQjWOKR9oZyf3BYWH7oqVhL7w==", null, false, null, false, "Admin" });
+                values: new object[] { "43cb1ccf-27df-4fc0-bda4-19b6ec0dfc67", 0, "39d1d81d-7880-48d8-bf8b-f37ed48e89b0", "Türkiye", null, false, "Admin", false, null, null, "ADMIN", "AQAAAAEAACcQAAAAEJZqTbZPKSQtbGGk4jDRygqKJbzj8j1cg3Boz0OsGWZ0JbJY6yuB+J0yKD08MqDEFQ==", null, false, null, false, "Admin" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "CreatedDate", "Name", "UpdatedDate" },
+                values: new object[,]
+                {
+                    { new Guid("4074ced8-fcf7-446a-bc83-54ac044b6c19"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Aksesuar", null },
+                    { new Guid("52352dbc-1c35-4c89-ba65-13177602dd8e"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kırtasiye", null },
+                    { new Guid("5ac1c3ad-6d77-4991-9567-406ed07c0337"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Mutfak", null },
+                    { new Guid("85fbe023-a4c8-451e-afc1-5f09a00e4586"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Giyim", null },
+                    { new Guid("e136fd20-1322-4e60-82ce-1ab9ec413544"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Teknoloji", null }
+                });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "22e814cc-a282-4782-8acc-b5ce39aa6245", "1b7ed90f-81b0-42e1-b00f-bd122112a405" });
+                values: new object[] { "8874edef-39d5-43d2-987e-9fe323d0524d", "43cb1ccf-27df-4fc0-bda4-19b6ec0dfc67" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

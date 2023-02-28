@@ -26,6 +26,33 @@ namespace ToBuyAPI.Persistence.Contexts
 			new ProductImageFileConfiguration().Configure(modelBuilder.Entity<ProductImageFile>());
 			new ToBuyListConfiguration().Configure(modelBuilder.Entity<ToBuyList>());
 
+			AddSeedDatas(modelBuilder);
+
+		}
+		public DbSet<Category> Categories { get; set; }
+		public DbSet<Product> Products { get; set; }
+		public DbSet<ToBuyList> ToBuyLists { get; set; }
+		public DbSet<ProductImageFile> ProductImages { get; set; }
+
+		public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+		{
+			var datas = ChangeTracker.Entries<BaseEntity>();
+
+			foreach (var data in datas)
+			{
+				_ = data.State switch
+				{
+					EntityState.Added => data.Entity.CreatedDate = DateTime.Now,
+					EntityState.Modified => data.Entity.UpdatedDate = DateTime.Now,
+					_ => DateTime.Now,
+				};
+			}
+			return await base.SaveChangesAsync(cancellationToken);
+		}
+
+		private void AddSeedDatas(ModelBuilder modelBuilder)
+		{
+			#region Identity
 			IdentityRole adminRole = new IdentityRole
 			{
 				Id = Guid.NewGuid().ToString(),
@@ -56,26 +83,36 @@ namespace ToBuyAPI.Persistence.Contexts
 				RoleId = adminRole.Id,
 				UserId = appUser.Id
 			});
-		}
-		public DbSet<Category> Categories { get; set; }
-		public DbSet<Product> Products { get; set; }
-		public DbSet<ToBuyList> ToBuyLists { get; set; }
-		public DbSet<ProductImageFile> ProductImages { get; set; }
+			#endregion
 
-		public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-		{
-			var datas = ChangeTracker.Entries<BaseEntity>();
-
-			foreach (var data in datas)
+			#region Category
+			Category aksesuar = new()
 			{
-				_ = data.State switch
-				{
-					EntityState.Added => data.Entity.CreatedDate = DateTime.Now,
-					EntityState.Modified => data.Entity.UpdatedDate = DateTime.Now,
-					_ => DateTime.Now,
-				};
-			}
-			return await base.SaveChangesAsync(cancellationToken);
+				Id = Guid.NewGuid(),
+				Name = "Aksesuar",
+			};
+			Category giyim = new()
+			{
+				Id = Guid.NewGuid(),
+				Name = "Giyim",
+			};
+			Category kirtasiye = new()
+			{
+				Id = Guid.NewGuid(),
+				Name = "Kırtasiye",
+			};
+			Category mutfak = new()
+			{
+				Id = Guid.NewGuid(),
+				Name = "Mutfak",
+			};
+			Category teknoloji = new()
+			{
+				Id = Guid.NewGuid(),
+				Name = "Teknoloji",
+			};
+			modelBuilder.Entity<Category>().HasData(aksesuar, giyim, kirtasiye, mutfak, teknoloji);
+			#endregion
 		}
 	}
 }

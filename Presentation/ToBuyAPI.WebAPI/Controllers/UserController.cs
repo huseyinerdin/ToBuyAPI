@@ -27,6 +27,11 @@ namespace ToBuyAPI.WebAPI.Controllers
 			_tokenHandler = tokenHandler;
 			_roleManager = roleManager;
 		}
+		/// <summary>
+		/// Yeni kullanıcı ekleme işlemi
+		/// </summary>
+		/// <param name="model"></param>
+		/// <returns></returns>
 		[HttpPost("[action]")]
 		public async Task<IActionResult> Register(CreateAppUser model)
 		{
@@ -51,6 +56,11 @@ namespace ToBuyAPI.WebAPI.Controllers
 				return BadRequest(result);
 			}
 		}
+		/// <summary>
+		/// Var olan kullanıcı ile sisteme giriş yapma işlemi
+		/// </summary>
+		/// <param name="model"></param>
+		/// <returns></returns>
 		[HttpPost("[action]")]
 		public async Task<IActionResult> Login(LoginAppUser model)
 		{

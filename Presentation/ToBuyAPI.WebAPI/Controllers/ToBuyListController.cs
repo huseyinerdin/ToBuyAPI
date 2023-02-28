@@ -17,6 +17,11 @@ namespace ToBuyAPI.WebAPI.Controllers
 			_toBuyListService = toBuyListService;
 		}
 		#region Post Methods
+		/// <summary>
+		/// Yeni liste oluşturma işlemi @@@Admin/User
+		/// </summary>
+		/// <param name="model"></param>
+		/// <returns></returns>
 		[HttpPost]
 		public async Task<IActionResult> Add(CreateToBuyList model)
 		{
@@ -26,20 +31,33 @@ namespace ToBuyAPI.WebAPI.Controllers
 		#endregion
 
 		#region Delete Methods
+		/// <summary>
+		/// DeleteToBuyList nesnesi kullanılarak liste silme işlemi @@@Admin/User
+		/// </summary>
+		/// <param name="model"></param>
+		/// <returns></returns>
 		[HttpDelete]
 		public async Task<IActionResult> Delete(DeleteToBuyList model)
 		{
 			var result = await _toBuyListService.DeleteAsync(model);
 			return result.IsSuccess ? Ok(result) : BadRequest(result);
 		}
-
+		/// <summary>
+		/// Liste id üzerinden liste silme işlemi @@@Admin/User
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		[HttpDelete("{id}")]
 		public async Task<IActionResult> DeleteById([FromRoute] string id)
 		{
 			var result = await _toBuyListService.DeleteByIdAsync(id);
 			return result.IsSuccess ? Ok(result) : BadRequest(result);
 		}
-
+		/// <summary>
+		/// Toplu olarak liste silme işlemi @@@Admin/User
+		/// </summary>
+		/// <param name="models"></param>
+		/// <returns></returns>
 		[HttpDelete("Range")]
 		public async Task<IActionResult> DeleteRange(List<DeleteToBuyList> models)
 		{
@@ -49,6 +67,11 @@ namespace ToBuyAPI.WebAPI.Controllers
 		#endregion
 
 		#region Put Methods
+		/// <summary>
+		/// Var olan bir listeyi güncelleme işlemi @@@Admin/User
+		/// </summary>
+		/// <param name="model"></param>
+		/// <returns></returns>
 		[HttpPut]
 		public async Task<IActionResult> Update(UpdateToBuyList model)
 		{
@@ -58,6 +81,10 @@ namespace ToBuyAPI.WebAPI.Controllers
 		#endregion
 
 		#region Get Methods
+		/// <summary>
+		/// Tüm listeleri çağırma işlemi @@@Admin
+		/// </summary>
+		/// <returns></returns>
 		[HttpGet]
 		[Authorize(policy: "Admin")]
 		public async Task<IActionResult> GetAll()
@@ -65,6 +92,22 @@ namespace ToBuyAPI.WebAPI.Controllers
 			var result = await _toBuyListService.GetAllAsync();
 			return Ok(result);
 		}
+		/// <summary>
+		/// Kullanıcı Id üzerinden kullanıcıya ait listeleri çağırma işlemi @@@Admin/User
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
+		[HttpGet("[action]/{id}")]
+		public async Task<IActionResult> GetAllByUserId(string id)
+		{
+			var result = await _toBuyListService.GetAllAsync(id);
+			return Ok(result);
+		}
+		/// <summary>
+		/// Liste Id üzerinden tek bir listeyi çağırma işlemi
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		[HttpGet("{id}")]
 		public async Task<IActionResult> GetById(string id)
 		{

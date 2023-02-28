@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Reflection;
 using System.Text;
 using ToBuyAPI.Application.AutoMapper;
 using ToBuyAPI.Infrastructure;
@@ -18,8 +20,8 @@ builder.Services.AddStorage<LocalStorage>();
 
 // CORS policy created.
 builder.Services.AddCors(
-    options => options.AddDefaultPolicy(
-        policy => policy.WithOrigins("https://localhost:7156/", "http://localhost:7156/").AllowAnyHeader().AllowAnyMethod()));
+	options => options.AddDefaultPolicy(
+		policy => policy.WithOrigins("https://localhost:7156/", "http://localhost:7156/").AllowAnyHeader().AllowAnyMethod()));
 
 // Validation filter added for validation checks on the backend.
 builder.Services.AddControllers(options => options.Filters.Add<ValidationFilter>());
@@ -32,7 +34,8 @@ builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c => {
+builder.Services.AddSwaggerGen(c =>
+{
 	c.SwaggerDoc("v1", new OpenApiInfo
 	{
 		Title = "JWTToken_Auth_API",
@@ -48,17 +51,19 @@ builder.Services.AddSwaggerGen(c => {
 		Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\"",
 	});
 	c.AddSecurityRequirement(new OpenApiSecurityRequirement {
-		{
-			new OpenApiSecurityScheme {
-				Reference = new OpenApiReference {
-					Type = ReferenceType.SecurityScheme,
-						Id = "Bearer"
-				}
-			},
-			new string[] {}
-		}
-	});
+					{
+						new OpenApiSecurityScheme {
+							Reference = new OpenApiReference {
+								Type = ReferenceType.SecurityScheme,
+									Id = "Bearer"
+							}
+						},
+						new string[] {}
+					}
+				});
+	AddSwaggerDocumentation(c);
 });
+
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 	.AddJwtBearer("General", options =>
@@ -84,12 +89,6 @@ builder.Services.AddAuthorization(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-	app.UseSwaggerUI();
-}
 
 // Created CORS policy was used.
 app.UseCors();
@@ -98,7 +97,20 @@ app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+	app.UseSwagger();
+	app.UseSwaggerUI();
+}
 
 app.MapControllers();
 
 app.Run();
+
+
+static void AddSwaggerDocumentation(SwaggerGenOptions o)
+{
+	var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+	o.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+}

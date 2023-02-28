@@ -12,5 +12,6 @@ namespace ToBuyAPI.Application.Abstractions.Services
 		Task<IResult> UpdateAsync(UpdateToBuyList model);
 		Task<IDataResult<List<ListItemToBuyList>>> GetAllAsync();
 		Task<IDataResult<ListItemToBuyList>> GetByIdAsync(string id);
+		Task<IDataResult<List<ListItemToBuyList>>> GetAllAsync(string id);
 	}
 }

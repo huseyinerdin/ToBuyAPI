@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ToBuyAPI.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:ToBuyAPI.WebAPI.Controllers.CategoryController.Add(ToBuyAPI.Application.DTOs.Category.CreateCategory)">
+            <summary>
+            Yeni kategori ekleme işlemi @@@Admin
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToBuyAPI.WebAPI.Controllers.CategoryController.AddRange(System.Collections.Generic.List{ToBuyAPI.Application.DTOs.Category.CreateCategory})">
+            <summary>
+            Birden fazla yeni kategori ekleme işlemi @@@Admin
+            </summary>
+            <param name="models"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToBuyAPI.WebAPI.Controllers.CategoryController.Delete(ToBuyAPI.Application.DTOs.Category.DeleteCategory)">
+            <summary>
+            DeleteCategory nesnesi kullanılarak kategori silme işlemi @@@Admin
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToBuyAPI.WebAPI.Controllers.CategoryController.DeleteById(System.String)">
+            <summary>
+            Kategori Id üzerinden kategori silme işlemi @@@Admin
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToBuyAPI.WebAPI.Controllers.CategoryController.DeleteRange(System.Collections.Generic.List{ToBuyAPI.Application.DTOs.Category.DeleteCategory})">
+            <summary>
+            Toplu olarak kategori silme işlemi @@@Admin
+            </summary>
+            <param name="models"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToBuyAPI.WebAPI.Controllers.CategoryController.Update(ToBuyAPI.Application.DTOs.Category.UpdateCategory)">
+            <summary>
+            Var olan bir kategoriyi güncelleme işlemi @@@Admin
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToBuyAPI.WebAPI.Controllers.CategoryController.GetAll">
+            <summary>
+            Tum kategorileri çağırma@@@Admin/User
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ToBuyAPI.WebAPI.Controllers.CategoryController.GetById(System.String)">
+            <summary>
+            Kategori Id üzerinden tek bir kategori çağırma@@@Admin/User
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

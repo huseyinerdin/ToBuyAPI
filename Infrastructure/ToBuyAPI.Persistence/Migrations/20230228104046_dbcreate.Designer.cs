@@ -12,7 +12,7 @@ using ToBuyAPI.Persistence.Contexts;
 namespace ToBuyAPI.Persistence.Migrations
 {
     [DbContext(typeof(ToBuyAPIDbContext))]
-    [Migration("20230227210903_dbcreate")]
+    [Migration("20230228104046_dbcreate")]
     partial class dbcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,7 +54,7 @@ namespace ToBuyAPI.Persistence.Migrations
                     b.ToTable("CategoryToBuyList");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -83,15 +83,15 @@ namespace ToBuyAPI.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "22e814cc-a282-4782-8acc-b5ce39aa6245",
-                            ConcurrencyStamp = "5f931eff-7c3e-4253-9f6a-a2093bdf56b4",
+                            Id = "8874edef-39d5-43d2-987e-9fe323d0524d",
+                            ConcurrencyStamp = "dabdcc23-6e4c-48ba-b166-d2ecc5ce0c1e",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "6875ce90-2d57-4313-810d-d47a066da020",
-                            ConcurrencyStamp = "2e7f6eb3-34da-4af5-83bf-e8855066e166",
+                            Id = "65e96e00-394b-41ff-a065-e4396ee7de0e",
+                            ConcurrencyStamp = "7dea2eb6-0c33-427b-9d2f-64205eba868e",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -186,8 +186,8 @@ namespace ToBuyAPI.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "1b7ed90f-81b0-42e1-b00f-bd122112a405",
-                            RoleId = "22e814cc-a282-4782-8acc-b5ce39aa6245"
+                            UserId = "43cb1ccf-27df-4fc0-bda4-19b6ec0dfc67",
+                            RoleId = "8874edef-39d5-43d2-987e-9fe323d0524d"
                         });
                 });
 
@@ -230,6 +230,38 @@ namespace ToBuyAPI.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("4074ced8-fcf7-446a-bc83-54ac044b6c19"),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Aksesuar"
+                        },
+                        new
+                        {
+                            Id = new Guid("85fbe023-a4c8-451e-afc1-5f09a00e4586"),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Giyim"
+                        },
+                        new
+                        {
+                            Id = new Guid("52352dbc-1c35-4c89-ba65-13177602dd8e"),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Kırtasiye"
+                        },
+                        new
+                        {
+                            Id = new Guid("5ac1c3ad-6d77-4991-9567-406ed07c0337"),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Mutfak"
+                        },
+                        new
+                        {
+                            Id = new Guid("e136fd20-1322-4e60-82ce-1ab9ec413544"),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Teknoloji"
+                        });
                 });
 
             modelBuilder.Entity("ToBuyApı.Domain.Entities.Identity.AppUser", b =>
@@ -307,15 +339,15 @@ namespace ToBuyAPI.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1b7ed90f-81b0-42e1-b00f-bd122112a405",
+                            Id = "43cb1ccf-27df-4fc0-bda4-19b6ec0dfc67",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1dc13090-0a7b-4f3c-8cfd-37130b82754d",
+                            ConcurrencyStamp = "39d1d81d-7880-48d8-bf8b-f37ed48e89b0",
                             Country = "Türkiye",
                             EmailConfirmed = false,
                             FullName = "Admin",
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJJWu/B1cm36SFOPlxArIbQInsjE1wf11Eh9pK90leQjWOKR9oZyf3BYWH7oqVhL7w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJZqTbZPKSQtbGGk4jDRygqKJbzj8j1cg3Boz0OsGWZ0JbJY6yuB+J0yKD08MqDEFQ==",
                             PhoneNumberConfirmed = false,
                             TwoFactorEnabled = false,
                             UserName = "Admin"
@@ -446,7 +478,7 @@ namespace ToBuyAPI.Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<string>", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -473,7 +505,7 @@ namespace ToBuyAPI.Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<string>", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
